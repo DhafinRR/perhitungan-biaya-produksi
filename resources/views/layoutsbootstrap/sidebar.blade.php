@@ -194,7 +194,7 @@
       <div>
         <div class="brand-logo d-flex align-items-center justify-content-between">
           <a href="./index.html" class="text-nowrap logo-img">
-            <img src="{{asset('img/mukena.png')}}" width="180" alt="" />
+            <img src="{{asset('img/')}}" width="180" alt="" />
           </a>
           <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
             <i class="ti ti-x fs-8"></i>
@@ -220,11 +220,27 @@
               <span class="hide-menu">Masterdata</span>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="{{ url('perusahaan') }}" aria-expanded="false">
+              <a class="sidebar-link" href="{{ url('pegawai') }}" aria-expanded="false">
                 <span>
-                  <i class="ti ti-layout"></i>
+                  <i class="ti ti-users"></i>
                 </span>
-                <span class="hide-menu">Perusahaan</span>
+                <span class="hide-menu">Pegawai</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="{{ url('pekerjaan') }}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-briefcase"></i>
+                </span>
+                <span class="hide-menu">Pekerjaan</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="{{ url('bahan_baku') }}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-building-store"></i>
+                </span>
+                <span class="hide-menu">Bahan Baku</span>
               </a>
             </li>
             <li class="sidebar-item">
@@ -235,30 +251,7 @@
                 <span class="hide-menu">Coa</span>
               </a>
             </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link" href="{{ url('contohform') }}" aria-expanded="false">
-                <span>
-                  <i class="ti ti-cards"></i>
-                </span>
-                <span class="hide-menu">ContohForm</span>
-              </a>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link" href="./ui-forms.html" aria-expanded="false">
-                <span>
-                  <i class="ti ti-file-description"></i>
-                </span>
-                <span class="hide-menu">Forms</span>
-              </a>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link" href="./ui-typography.html" aria-expanded="false">
-                <span>
-                  <i class="ti ti-typography"></i>
-                </span>
-                <span class="hide-menu">Typography</span>
-              </a>
-            </li>
+
             <li class="nav-small-cap">
               <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
               <span class="hide-menu">Transaksi</span>

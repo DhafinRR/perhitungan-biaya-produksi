@@ -36,8 +36,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Toko Mukena</title>
-  <link rel="shortcut icon" type="img/png" href="{{asset('img/mukena.png')}}" />
+  <title>Biaya Produksi</title>
+  <link rel="shortcut icon" type="img/" href="{{asset('img/')}}" />
   <link rel="stylesheet" href="{{asset('css/styles.min.css')}}" />
 
   <style>

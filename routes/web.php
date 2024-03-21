@@ -3,7 +3,10 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PerusahaanController;
+use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\CoaController;
+use App\Models\Pegawai;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -52,6 +55,9 @@ Route::middleware('auth')->group(function () {
     // route ke master data perusahaan
     Route::resource('/perusahaan', PerusahaanController::class)->middleware(['auth']);
     Route::get('/perusahaan/destroy/{id}', [App\Http\Controllers\PerusahaanController::class, 'destroy'])->middleware(['auth']);
+
+    Route::resource('/pegawai', PegawaiController::class)->middleware(['auth']);
+    Route::get('/pegawai/destroy/{id}', [App\Http\Controllers\PegawaiController::class, 'destroy'])->middleware(['auth']);
 });
 
 require __DIR__ . '/auth.php';

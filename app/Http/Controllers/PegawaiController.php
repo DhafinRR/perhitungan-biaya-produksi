@@ -13,7 +13,14 @@ class PegawaiController extends Controller
      */
     public function index()
     {
-        //
+        //query data
+        $pegawai = pegawai::all();
+        return view(
+            'pegawai.view',
+            [
+                'pegawai' => $pegawai
+            ]
+        );
     }
 
     /**
@@ -21,7 +28,16 @@ class PegawaiController extends Controller
      */
     public function create()
     {
-        //
+        $pegawai = new pegawai();
+        // berikan kode pegawai secara otomatis
+        // 1. query dulu ke db, select max untuk mengetahui posisi terakhir 
+        return view(
+            'pegawai/create',
+            [
+                'kode_pegawai' => $pegawai->getKodePegawai()
+            ]
+        );
+        // return view('pegawai/view');
     }
 
     /**
@@ -29,7 +45,17 @@ class PegawaiController extends Controller
      */
     public function store(StorePegawaiRequest $request)
     {
-        //
+        //digunakan untuk validasi kemudian kalau ok tidak ada masalah baru disimpan ke db
+        $validated = $request->validate([
+            'kode_pegawai' => 'required',
+            'nama_pegawai' => 'required|unique:pegawai|min:5|max:255',
+            'alamat' => 'required',
+        ]);
+
+        // masukkan ke db
+        Pegawai::create($request->all());
+
+        return redirect()->route('pegawai.index')->with('success', 'Data Berhasil di Input');
     }
 
     /**
@@ -45,7 +71,7 @@ class PegawaiController extends Controller
      */
     public function edit(Pegawai $pegawai)
     {
-        //
+        return view('pegawai.edit', compact('pegawai'));
     }
 
     /**
@@ -53,14 +79,28 @@ class PegawaiController extends Controller
      */
     public function update(UpdatePegawaiRequest $request, Pegawai $pegawai)
     {
-        //
+        //digunakan untuk validasi kemudian kalau ok tidak ada masalah baru diupdate ke db
+        $validated = $request->validate([
+            'id_pegawai' => 'required',
+            'kode_pegawai' => 'required',
+            'nama_pegawai' => 'required|min:5|max:255',
+            'alamat' => 'required',
+        ]);
+
+        $pegawai->update($validated);
+
+        return redirect()->route('pegawai.index')->with('success', 'Data Berhasil di Ubah');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Pegawai $pegawai)
+    public function destroy($id)
     {
-        //
+        //hapus dari database
+        $pegawai = Pegawai::findOrFail($id);
+        $pegawai->delete();
+
+        return redirect()->route('pegawai.index')->with('success', 'Data Berhasil di Hapus');
     }
 }
