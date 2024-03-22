@@ -48,7 +48,7 @@ class PegawaiController extends Controller
         //digunakan untuk validasi kemudian kalau ok tidak ada masalah baru disimpan ke db
         $validated = $request->validate([
             'kode_pegawai' => 'required',
-            'nama_pegawai' => 'required|unique:pegawai|min:5|max:255',
+            'nama_pegawai' => 'required|unique:pegawai|max:255',
             'alamat' => 'required',
         ]);
 
