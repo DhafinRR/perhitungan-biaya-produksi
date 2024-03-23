@@ -244,6 +244,14 @@
               </a>
             </li>
             <li class="sidebar-item">
+              <a class="sidebar-link" href="{{ url('bahanpenolong') }}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-shopping-cart"></i>
+                </span>
+                <span class="hide-menu">Bahan Penolong</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
               <a class="sidebar-link" href="{{ url('coa') }}" aria-expanded="false">
                 <span>
                   <i class="ti ti-clipboard"></i>
@@ -251,16 +259,6 @@
                 <span class="hide-menu">Coa</span>
               </a>
             </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link" href="{{ url('bahanpenolong') }}" aria-expanded="false">
-                <span>
-                  <i class="ti ti-layout-grid"></i>
-                </span>
-                <span class="hide-menu">Bahan Penolong</span>
-              </a>
-            </li>
-
-
             <li class="nav-small-cap">
               <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
               <span class="hide-menu">Transaksi</span>
