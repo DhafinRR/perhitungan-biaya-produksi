@@ -11,6 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
+        Schema::dropIfExists('perusahaan');
         Schema::create('perusahaan', function (Blueprint $table) {
             $table->increments('id');
             $table->string('kode_perusahaan', 6)->unique();

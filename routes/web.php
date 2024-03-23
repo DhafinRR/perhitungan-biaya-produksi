@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PerusahaanController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\CoaController;
+use App\Http\Controllers\BahanbakuController;
 use App\Models\Pegawai;
 
 /*
@@ -58,6 +59,9 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('/pegawai', PegawaiController::class)->middleware(['auth']);
     Route::get('/pegawai/destroy/{id}', [App\Http\Controllers\PegawaiController::class, 'destroy'])->middleware(['auth']);
+
+    Route::resource('/bahanbaku', BahanbakuController::class)->middleware(['auth']);
+    Route::get('/bahanbaku/destroy/{id}', [App\Http\Controllers\BahanbakuController::class, 'destroy'])->middleware(['auth']);
 });
 
 require __DIR__ . '/auth.php';
