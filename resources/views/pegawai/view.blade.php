@@ -80,7 +80,6 @@
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead class="thead-dark">
                                         <tr>
-                                            <th>Id</th>
                                             <th>Kode</th>
                                             <th>Nama</th>
                                             <th>Alamat</th>
@@ -89,7 +88,6 @@
                                     </thead>
                                     <tfoot class="thead-dark">
                                         <tr>
-                                            <th>Id</th>
                                             <th>Kode</th>
                                             <th>Nama</th>
                                             <th>Alamat</th>
@@ -99,7 +97,6 @@
                                     <tbody>
                                     @foreach ($pegawai as $p)
                                         <tr>
-                                            <td>{{ $p->id_pegawai }}</td>
                                             <td>{{ $p->kode_pegawai }}</td>
                                             <td>{{ $p->nama_pegawai }}</td>
                                             <td>{{ $p->alamat }}</td>
