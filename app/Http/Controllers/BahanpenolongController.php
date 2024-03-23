@@ -17,11 +17,12 @@ class BahanpenolongController extends Controller
     {
         //query data
         $bahanpenolong = Bahanpenolong::all();
-        return view('bahanpenolong.view',
-                    [
-                        'bahanpenolong' => $bahanpenolong
-                    ]
-                  );
+        return view(
+            'bahanpenolong.view',
+            [
+                'bahanpenolong' => $bahanpenolong
+            ]
+        );
     }
 
     /**
@@ -31,14 +32,15 @@ class BahanpenolongController extends Controller
      */
     public function create()
     {
-         // berikan kode bahanpenolong secara otomatis
+        // berikan kode bahanpenolong secara otomatis
         // 1. query dulu ke db, select max untuk mengetahui posisi terakhir 
-        
-        return view('bahanpenolong/create',
-                    [
-                        'kode_bahanpenolong' => Bahanpenolong::getKodeBahanpenolong()
-                    ]
-                  );
+
+        return view(
+            'bahanpenolong/create',
+            [
+                'kode_bahanpenolong' => Bahanpenolong::getKodeBahanpenolong()
+            ]
+        );
         // return view('bahanpenolong/view');
     }
 
@@ -56,13 +58,13 @@ class BahanpenolongController extends Controller
             'nama_bahanpenolong' => 'required',
             'satuan' => 'required',
             'kuantitas' => 'required',
-        
+
         ]);
 
         // masukkan ke db
         Bahanpenolong::create($request->all());
-        
-        return redirect()->route('bahanpenolong.index')->with('success','Data Berhasil di Input');
+
+        return redirect()->route('bahanpenolong.index')->with('success', 'Data Berhasil di Input');
     }
 
     /**
@@ -102,12 +104,12 @@ class BahanpenolongController extends Controller
             'nama_bahanpenolong' => 'required',
             'satuan' => 'required',
             'kuantitas' => 'required',
-        
+
         ]);
-    
+
         $bahanpenolong->update($validated);
-    
-        return redirect()->route('bahanpenolong.index')->with('success','Data Berhasil di Ubah');
+
+        return redirect()->route('bahanpenolong.index')->with('success', 'Data Berhasil di Ubah');
     }
 
     /**
@@ -122,6 +124,6 @@ class BahanpenolongController extends Controller
         $bahanpenolong = Bahanpenolong::findOrFail($id);
         $bahanpenolong->delete();
 
-        return redirect()->route('bahanpenolong.index')->with('success','Data Berhasil di Hapus');
+        return redirect()->route('bahanpenolong.index')->with('success', 'Data Berhasil di Hapus');
     }
 }
