@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('pegawai', function (Blueprint $table) {
             $table->id();
             $table->string('nama_pegawai');
-            $table->string('jenis_pekerjaan');
             $table->string('alamat');
             $table->timestamps();
         });

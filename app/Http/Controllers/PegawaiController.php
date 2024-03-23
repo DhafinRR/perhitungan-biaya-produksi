@@ -81,7 +81,6 @@ class PegawaiController extends Controller
     {
         //digunakan untuk validasi kemudian kalau ok tidak ada masalah baru diupdate ke db
         $validated = $request->validate([
-            'id_pegawai' => 'required',
             'kode_pegawai' => 'required',
             'nama_pegawai' => 'required|min:5|max:255',
             'alamat' => 'required',

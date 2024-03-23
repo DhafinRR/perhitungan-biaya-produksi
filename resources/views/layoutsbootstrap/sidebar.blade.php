@@ -244,14 +244,6 @@
               </a>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="{{ url('biaya_operasional_pabrik') }}" aria-expanded="false">
-                <span>
-                  <i class="ti ti-moneybag"></i>
-                </span>
-                <span class="hide-menu">Biaya Operasional Pabrik</span>
-              </a>
-            </li>
-            <li class="sidebar-item">
               <a class="sidebar-link" href="{{ url('coa') }}" aria-expanded="false">
                 <span>
                   <i class="ti ti-clipboard"></i>
