@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PerusahaanController;
 use App\Http\Controllers\PegawaiController;
+use App\Http\Controllers\PekerjaanController;
 use App\Http\Controllers\CoaController;
 use App\Models\Pegawai;
 
@@ -58,6 +59,9 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('/pegawai', PegawaiController::class)->middleware(['auth']);
     Route::get('/pegawai/destroy/{id}', [App\Http\Controllers\PegawaiController::class, 'destroy'])->middleware(['auth']);
+
+    Route::resource('/pekerjaan', PekerjaanController::class)->middleware(['auth']);
+    Route::get('/pekerjaan/destroy/{id}', [App\Http\Controllers\PekerjaanController::class, 'destroy'])->middleware(['auth']);
 });
 
 require __DIR__ . '/auth.php';
