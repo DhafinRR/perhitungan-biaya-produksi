@@ -88,7 +88,6 @@
                                     </thead>
                                     <tfoot class="thead-dark">
                                         <tr>
-                                            <th>Id Pegawai</th>
                                             <th>Kode</th>
                                             <th>Nama</th>
                                             <th>Alamat</th>
