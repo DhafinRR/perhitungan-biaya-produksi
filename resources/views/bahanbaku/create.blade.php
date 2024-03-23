@@ -78,15 +78,15 @@
                     <input type="hidden" id="kode_bahanbaku" name="kode_bahanbaku" value="{{$kode_bahanbaku}}">
 
                     <div class="mb-3"><label for="nama_bahanbaku">Nama Bahan Baku</label>
-                    <input class="form-control form-control-solid" id="nama_bahanbaku" name="nama_bahanbaku" type="text" placeholder="Contoh: Melvin" value="{{old('nama_bahanbaku')}}">
+                    <input class="form-control form-control-solid" id="nama_bahanbaku" name="nama_bahanbaku" type="text" placeholder="Contoh: Kayu" value="{{old('nama_bahanbaku')}}">
                     </div>
 
                     <div class="mb-3"><label for="satuan">Satuan</label>
-                    <input class="form-control form-control-solid" id="satuan" name="satuan" type="text" placeholder="Contoh: Melvin" value="{{old('satuan')}}">
+                    <input class="form-control form-control-solid" id="satuan" name="satuan" type="text" placeholder="Contoh: Kg"{{old('satuan')}}">
                     </div>
 
                     <div class="mb-3"><label for="kuantitas">Kuantitas</label>
-                    <input class="form-control form-control-solid" id="kuantitas" name="kuantitas" type="text" placeholder="Contoh: Melvin" value="{{old('kuantitas')}}">
+                    <input class="form-control form-control-solid" id="kuantitas" name="kuantitas" type="text" placeholder="Contoh: 100" value="{{old('kuantitas')}}">
                     </div>
                     <br>
                     <!-- untuk tombol simpan -->
