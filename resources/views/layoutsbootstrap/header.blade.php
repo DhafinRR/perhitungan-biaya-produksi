@@ -37,7 +37,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Biaya Produksi</title>
-  <link rel="shortcut icon" type="img/" href="{{asset('img/')}}" />
+  <link rel="shortcut icon" type="img/produksi.png" href="{{asset('img/produksi.png')}}" />
   <link rel="stylesheet" href="{{asset('css/styles.min.css')}}" />
 
   <style>
