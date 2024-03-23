@@ -69,24 +69,20 @@
                 <!-- Akhir Display Error -->
 
                 <!-- Awal Dari Input Form -->
-                <form action="{{ route('pegawai.store') }}" method="post">
+                <form action="{{ route('pekerjaan.store') }}" method="post">
                     @csrf
                     <fieldset disabled>
-                        <div class="mb-3"><label for="idpegawailabel">Id Pegawai</label>
-                        <input class="form-control form-control-solid" id="id_pegawai_tampil" name="id_pegawai_tampil" type="text" placeholder="Contoh: PR-001" value="{{$kode_pegawai}}" readonly></div>
+                        <div class="mb-3"><label for="kodepekerjaanlabel">Kode Pekerjaan</label>
+                        <input class="form-control form-control-solid" id="kode_pekerjaan" name="kode_pekerjaan" type="text" placeholder="Contoh: PJ-001" value="{{$kode_pekerjaan}}" readonly></div>
                     </fieldset>
-                    <fieldset disabled>
-                        <div class="mb-3"><label for="kodepegawailabel">Kode Pegawai</label>
-                        <input class="form-control form-control-solid" id="kode_pegawai_tampil" name="kode_pegawai_tampil" type="text" placeholder="Contoh: PR-001" value="{{$kode_pegawai}}" readonly></div>
-                    </fieldset>
-                    <input type="hidden" id="kode_pegawai" name="kode_pegawai" value="{{$kode_pegawai}}">
+                    <input type="hidden" id="kode_pekerjaan" name="kode_pekerjaan" value="{{$kode_pekerjaan}}">
 
-                    <div class="mb-3"><label for="namapegawailabel">Nama Pegawai</label>
-                    <input class="form-control form-control-solid" id="nama_pegawai" name="nama_pegawai" type="text" placeholder="Contoh: Melvin" value="{{old('nama_pegawai')}}">
+                    <div class="mb-3"><label for="jenispekerjaanlabel">Jenis Pekerjaan</label>
+                    <input class="form-control form-control-solid" id="jenis_pekerjaan" name="jenis_pekerjaan" type="text" placeholder="Contoh: Perakitan" value="{{old('jenis_pekerjaan')}}">
                     </div>
         
-                    <div class="mb-0"><label for="alamatlabel">Alamat</label>
-                        <textarea class="form-control form-control-solid" id="alamat" name="alamat" rows="3" placeholder="Cth: Jl Pelajar Pejuan 45">{{old('alamat')}}</textarea>
+                    <div class="mb-0"><label for="tarifperjamlabel">Tarif Per Jam</label>
+                        <textarea class="form-control form-control-solid" id="tarif_per_jam" name="tarif_per_jam" rows="3" placeholder="Cth: Rp 25,000">{{old('tarif_per_jam')}}</textarea>
                     </div>
                     <br>
                     <!-- untuk tombol simpan -->
@@ -94,7 +90,7 @@
                     <input class="col-sm-1 btn btn-success btn-sm" type="submit" value="Simpan">
 
                     <!-- untuk tombol batal simpan -->
-                    <a class="col-sm-1 btn btn-dark  btn-sm" href="{{ url('/pegawai') }}" role="button">Batal</a>
+                    <a class="col-sm-1 btn btn-dark  btn-sm" href="{{ url('/pekerjaan') }}" role="button">Batal</a>
                     
                 </form>
                 <!-- Akhir Dari Input Form -->

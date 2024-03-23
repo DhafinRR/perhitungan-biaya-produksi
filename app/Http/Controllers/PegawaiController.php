@@ -28,7 +28,7 @@ class PegawaiController extends Controller
      */
     public function create()
     {
-        $pegawai = new pegawai();
+        $pegawai = new Pegawai();
         // berikan kode pegawai secara otomatis
         // 1. query dulu ke db, select max untuk mengetahui posisi terakhir 
         return view(
