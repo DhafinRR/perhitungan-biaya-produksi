@@ -236,7 +236,7 @@
               </a>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="{{ url('bahan_baku') }}" aria-expanded="false">
+              <a class="sidebar-link" href="{{ url('bahanbaku') }}" aria-expanded="false">
                 <span>
                   <i class="ti ti-building-store"></i>
                 </span>
