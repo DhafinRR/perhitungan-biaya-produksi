@@ -72,10 +72,6 @@
                 <form action="{{ route('pegawai.store') }}" method="post">
                     @csrf
                     <fieldset disabled>
-                        <div class="mb-3"><label for="idpegawailabel">Id Pegawai</label>
-                        <input class="form-control form-control-solid" id="id_pegawai_tampil" name="id_pegawai_tampil" type="text" placeholder="Contoh: PR-001" value="{{$kode_pegawai}}" readonly></div>
-                    </fieldset>
-                    <fieldset disabled>
                         <div class="mb-3"><label for="kodepegawailabel">Kode Pegawai</label>
                         <input class="form-control form-control-solid" id="kode_pegawai_tampil" name="kode_pegawai_tampil" type="text" placeholder="Contoh: PR-001" value="{{$kode_pegawai}}" readonly></div>
                     </fieldset>

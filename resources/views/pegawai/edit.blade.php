@@ -72,10 +72,6 @@
                 <form action="{{ route('pegawai.update', $pegawai->id_pegawai) }}" method="post">
                     @csrf
                     @method('PUT')
-                    <fieldset disabled>
-                        <div class="mb-3"><label for="idpegawailabel">Id Pegawai</label>
-                        <input class="form-control form-control-solid" id="id_pegawai_tampil" name="id_pegawai_tampil" type="text" placeholder="Contoh: PR-001" value="{{$pegawai->id_pegawai}}" readonly></div>
-                    </fieldset>
                     <input type="hidden" id="id_pegawai" name="id_pegawai" value="{{$pegawai->id_pegawai}}">
                     <fieldset disabled>
                         <div class="mb-3"><label for="idpegawailabel">Kode Pegawai</label>
