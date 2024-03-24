@@ -84,7 +84,7 @@
                     <input type="hidden" id="kode_pekerjaan" name="kode_pekerjaan" value="{{$pekerjaan->kode_pekerjaan}}">
 
                     <div class="mb-3"><label for="jenispekerjaanlabel">Jenis Pekerjaan</label>
-                    <input class="form-control form-control-solid" id="jenis_pekerjaan" name="nama_pekerjaan" type="text" placeholder="Contoh: Perakitan" value="{{$pekerjaan->jenis_pekerjaan}}">
+                    <input class="form-control form-control-solid" id="jenis_pekerjaan" name="jenis_pekerjaan" type="text" placeholder="Contoh: Perakitan" value="{{$pekerjaan->jenis_pekerjaan}}">
                     </div>
                     
         
