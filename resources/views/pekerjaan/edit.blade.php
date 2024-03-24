@@ -87,7 +87,7 @@
                     <input class="form-control form-control-solid" id="jenis_pekerjaan" name="jenis_pekerjaan" type="text" placeholder="Contoh: Perakitan" value="{{$pekerjaan->jenis_pekerjaan}}">
                     </div>
                     
-        
+                    
                     <div class="mb-0"><label for="tarif_per_jam">Tarif Per Jam</label>
                         <textarea class="form-control form-control-solid" id="tarif_per_jam" name="tarif_per_jam" rows="3" placeholder="Cth: Rp 25.000">{{$pekerjaan->tarif_per_jam}}</textarea>
                     </div>
