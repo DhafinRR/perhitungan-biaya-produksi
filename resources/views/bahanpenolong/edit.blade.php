@@ -79,15 +79,15 @@
                     <input type="hidden" id="kode_bahanpenolong" name="kode_bahanpenolong" value="{{$bahanpenolong->kode_bahanpenolong}}">
 
                     <div class="mb-3"><label for="namabahanpenolonglabel">Nama Bahan Penolong</label>
-                      <input class="form-control form-control-solid" id="nama_bahanpenolong" name="nama_bahanpenolong" type="text" placeholder="isi nama bahan baku" value="{{$bahanpenolong->nama_bahanpenolong}}">
+                      <input class="form-control form-control-solid" id="nama_bahanpenolong" name="nama_bahanpenolong" type="text" placeholder="isi nama bahan penolong" value="{{$bahanpenolong->nama_bahanpenolong}}">
                       </div>
                      
                     <div class="mb-3"><label for="satuanlabel">Satuan</label>
                       <input class="form-control form-control-solid" id="satuan" name="satuan" type="text" placeholder="isi satuan" value="{{$bahanpenolong->satuan}}">
                       </div>
                     
-                    <div class="mb-3"><label for="Kuantitaslabel">Kuantitas</label>
-                      <input class="form-control form-control-solid" id="Kuantitas" name="Kuantitas" type="text" placeholder="isi kuantitas" value="{{$bahanpenolong->Kuantitas}}">
+                    <div class="mb-3"><label for="kuantitaslabel">Kuantitas</label>
+                      <input class="form-control form-control-solid" id="kuantitas" name="kuantitas" type="text" placeholder="isi kuantitas" value="{{$bahanpenolong->kuantitas}}">
                       </div>  
                     <!-- untuk tombol simpan -->
                     

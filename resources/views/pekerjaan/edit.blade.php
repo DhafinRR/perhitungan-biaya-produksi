@@ -83,16 +83,26 @@
                     </fieldset>
                     <input type="hidden" id="kode_pekerjaan" name="kode_pekerjaan" value="{{$pekerjaan->kode_pekerjaan}}">
 
-                    <div class="mb-3"><label for="jenispekerjaanlabel">Jenis Pekerjaan</label>
-                    <input class="form-control form-control-solid" id="jenis_pekerjaan" name="jenis_pekerjaan" type="text" placeholder="Contoh: Perakitan" value="{{$pekerjaan->jenis_pekerjaan}}">
+                    <div class="mb-0">
+                    <label for="jenispekerjaanlabel">Jenis Pekerjaan</label>
+                    <select class="form-select" id="jenis_pekerjaan" name="jenis_pekerjaan">
+                    <option value="Pengukuran & Pemotongan">Pengukuran & Pemotongan</option>
+                    <option value="Perakitan">Perakitan</option>
+                    <option value="Pengecatan & Finishing">Pengecatan & Finishing</option>
+                    <!-- Tambahkan opsi-opsi lainnya di sini jika diperlukan -->
+                    </select>
                     </div>
                     
-                    
-                    <div class="mb-0"><label for="tarif_per_jam">Tarif Per Jam</label>
-                        <textarea class="form-control form-control-solid" id="tarif_per_jam" name="tarif_per_jam" rows="3" placeholder="Cth: Rp 25.000">{{$pekerjaan->tarif_per_jam}}</textarea>
+                    <div class="mb-0">
+                    <label for="tarifperjamlabel">Tarif Per Jam</label>
+                    <select class="form-select" id="tarif_per_jam" name="tarif_per_jam">
+                    <option value="Rp. 20,000">Rp. 20,000</option>
+                    <option value="Rp. 25,000">Rp. 25,000</option>
+                    <option value="Rp. 28,000">Rp. 28,000</option>
+                    <!-- Tambahkan opsi-opsi lainnya di sini jika diperlukan -->
+                    </select>
                     </div>
-                    <br>
-                    <!-- untuk tombol simpan -->
+                    
                     
                     <input class="col-sm-1 btn btn-success btn-sm" type="submit" value="Ubah">
 
