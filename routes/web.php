@@ -7,6 +7,7 @@ use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\CoaController;
 use App\Models\Pegawai;
 use App\Http\Controllers\BahanpenolongController;
+use App\Http\Controllers\BiayalainnyaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -63,6 +64,10 @@ Route::middleware('auth')->group(function () {
     // route ke master data perusahaan
 Route::resource('/bahanpenolong', BahanpenolongController::class)->middleware(['auth']);
 Route::get('/bahanpenolong/destroy/{id}', [App\Http\Controllers\BahanpenolongController::class,'destroy'])->middleware(['auth']);
+
+// route ke master data perusahaan
+Route::resource('/biayalainnya', BiayalainnyaController::class)->middleware(['auth']);
+Route::get('/biayalainnya/destroy/{id}', [App\Http\Controllers\BiayalainnyaController::class,'destroy'])->middleware(['auth']);
 });
 
 require __DIR__ . '/auth.php';

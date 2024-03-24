@@ -259,6 +259,14 @@
                 <span class="hide-menu">Bahan Penolong</span>
               </a>
             </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="{{ url('biayalainnya') }}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-files"></i>
+                </span>
+                <span class="hide-menu">Biaya Lainnya</span>
+              </a>
+            </li>
 
 
             <li class="nav-small-cap">
