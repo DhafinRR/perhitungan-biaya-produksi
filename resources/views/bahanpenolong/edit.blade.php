@@ -86,8 +86,8 @@
                       <input class="form-control form-control-solid" id="satuan" name="satuan" type="text" placeholder="isi satuan" value="{{$bahanpenolong->satuan}}">
                       </div>
                     
-                    <div class="mb-3"><label for="Kuantitaslabel">Kuantitas</label>
-                      <input class="form-control form-control-solid" id="Kuantitas" name="Kuantitas" type="text" placeholder="isi kuantitas" value="{{$bahanpenolong->Kuantitas}}">
+                    <div class="mb-3"><label for="kuantitaslabel">Kuantitas</label>
+                      <input class="form-control form-control-solid" id="kuantitas" name="kuantitas" type="text" placeholder="isi kuantitas" value="{{$bahanpenolong->Kuantitas}}">
                       </div>  
                     <!-- untuk tombol simpan -->
                     
