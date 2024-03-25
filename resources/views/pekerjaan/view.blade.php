@@ -103,14 +103,14 @@
                                             <td>
                                                     <a href="{{ route('pekerjaan.edit', $p->id_pekerjaan) }}" class="btn btn-success btn-icon-split btn-sm">
                                                         <span class="icon text-white-50">
-                                                            <i class="ti ti-check"></i>
+                                                            <i class="ti ti-pencil"></i>
                                                         </span>
                                                         <span class="text">Ubah</span>
                                                     </a>
 
                                                     <a href="#" onclick="deleteConfirm(this); return false;" data-id="{{ $p->id_pekerjaan }}" class="btn btn-danger btn-icon-split btn-sm">
                                                         <span class="icon text-white-50">
-                                                            <i class="ti ti-minus"></i>
+                                                            <i class="ti ti-trash"></i>
                                                         </span>
                                                         <span class="text">Hapus</span>
                                                     </a>
