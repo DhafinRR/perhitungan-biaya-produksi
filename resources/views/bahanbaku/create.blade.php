@@ -88,6 +88,13 @@
                     <div class="mb-3"><label for="kuantitas">Kuantitas</label>
                     <input class="form-control form-control-solid" id="kuantitas" name="kuantitas" type="text" placeholder="Contoh: 100" value="{{old('kuantitas')}}">
                     </div>
+
+                    <div class="mb-3"><label for="kategori_bahan">Kuantitas</label>
+                    <select name="kategori_bahan" id="kategori_bahan">
+                      <option value="utama">Bahan Baku Utama</option>
+                      <option value="penolong">Bahan Baku Penolong</option>
+                    </select>
+                    </div>
                     <br>
                     <!-- untuk tombol simpan -->
                     
