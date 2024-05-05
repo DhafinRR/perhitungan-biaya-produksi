@@ -11,6 +11,7 @@ use App\Models\Pegawai;
 use App\Http\Controllers\BahanpenolongController;
 use App\Http\Controllers\BiayalainnyaController;
 use App\Http\Controllers\PenjualanController;
+use App\Http\Controllers\PembayaranController;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,6 +83,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('/biayalainnya', BiayalainnyaController::class)->middleware(['auth']);
     Route::get('/biayalainnya/destroy/{id}', [App\Http\Controllers\BiayalainnyaController::class, 'destroy'])->middleware(['auth']);
 
+
     // untuk transaksi penjualan
 Route::get('penjualan/barang/{id}', [App\Http\Controllers\PenjualanController::class,'getDataBarang'])->middleware(['auth']);
 Route::get('penjualan/keranjang', [App\Http\Controllers\PenjualanController::class,'keranjang'])->middleware(['auth']);
@@ -95,6 +97,8 @@ Route::get('penjualan/jmlinvoice', [App\Http\Controllers\PenjualanController::cl
 Route::get('penjualan/status', [App\Http\Controllers\PenjualanController::class,'viewstatus'])->middleware(['auth']);
 Route::resource('penjualan', PenjualanController::class)->middleware(['auth']);
 
+    Route::resource('/pembayaran', PembayaranController::class)->middleware(['auth']);
+    Route::get('/pembayaran/destroy/{id}', [App\Http\Controllers\PembayaranController::class, 'destroy'])->middleware(['auth']);
 });
 
 require __DIR__ . '/auth.php';
