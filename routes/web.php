@@ -10,6 +10,7 @@ use App\Http\Controllers\BahanbakuController;
 use App\Models\Pegawai;
 use App\Http\Controllers\BahanpenolongController;
 use App\Http\Controllers\BiayalainnyaController;
+use App\Http\Controllers\PembayaranController;
 
 /*
 |--------------------------------------------------------------------------
@@ -77,6 +78,9 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('/biayalainnya', BiayalainnyaController::class)->middleware(['auth']);
     Route::get('/biayalainnya/destroy/{id}', [App\Http\Controllers\BiayalainnyaController::class, 'destroy'])->middleware(['auth']);
+
+    Route::resource('/pembayaran', PembayaranController::class)->middleware(['auth']);
+    Route::get('/pembayaran/destroy/{id}', [App\Http\Controllers\PembayaranController::class, 'destroy'])->middleware(['auth']);
 });
 
 require __DIR__ . '/auth.php';
