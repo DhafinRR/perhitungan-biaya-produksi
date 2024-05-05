@@ -260,6 +260,18 @@
               </a>
             </li>
             <li class="sidebar-item">
+              <a class="sidebar-link" href="{{ url('coa') }}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-clipboard"></i>
+                </span>
+                <span class="hide-menu">Coa</span>
+              </a>
+            </li>
+            <li class="nav-small-cap">
+              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+              <span class="hide-menu">Transaksi</span>
+            </li>
+            <li class="sidebar-item">
               <a class="sidebar-link" href="{{ url('pembelian') }}" aria-expanded="false">
                 <span>
                   <i class="ti ti-files"></i>
@@ -268,11 +280,51 @@
               </a>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="{{ url('coa') }}" aria-expanded="false">
+              <a class="sidebar-link" href="{{ url('penjualan') }}" aria-expanded="false">
                 <span>
-                  <i class="ti ti-clipboard"></i>
+                  <i class="ti ti-shopping-cart"></i>
                 </span>
-                <span class="hide-menu">Coa</span>
+                <span class="hide-menu">Penjualan</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="{{ url('pembayaran/viewkeranjang') }}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-credit-card"></i>
+                </span>
+                <span class="hide-menu">Pembayaran</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="{{ url('pembayaran/viewstatus') }}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-credit-card"></i>
+                </span>
+                <span class="hide-menu">Status Pembayaran</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="{{ url('pembayaran/viewapprovalstatus') }}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-credit-card"></i>
+                </span>
+                <span class="hide-menu">Approval Pembayaran</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="./authentication-login.html" aria-expanded="false">
+                <span>
+                  <i class="ti ti-login"></i>
+                </span>
+                <span class="hide-menu">Login</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="./authentication-register.html" aria-expanded="false">
+                <span>
+                  <i class="ti ti-user-plus"></i>
+                </span>
+                <span class="hide-menu">Register</span>
               </a>
             </li>
             <li class="nav-small-cap">
@@ -332,58 +384,7 @@
               </a>
             </li>
             
-            <li class="nav-small-cap">
-              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-              <span class="hide-menu">Transaksi</span>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link" href="{{ url('penjualan') }}" aria-expanded="false">
-                <span>
-                  <i class="ti ti-shopping-cart"></i>
-                </span>
-                <span class="hide-menu">Penjualan</span>
-              </a>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link" href="{{ url('pembayaran/viewkeranjang') }}" aria-expanded="false">
-                <span>
-                  <i class="ti ti-credit-card"></i>
-                </span>
-                <span class="hide-menu">Pembayaran</span>
-              </a>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link" href="{{ url('pembayaran/viewstatus') }}" aria-expanded="false">
-                <span>
-                  <i class="ti ti-credit-card"></i>
-                </span>
-                <span class="hide-menu">Status Pembayaran</span>
-              </a>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link" href="{{ url('pembayaran/viewapprovalstatus') }}" aria-expanded="false">
-                <span>
-                  <i class="ti ti-credit-card"></i>
-                </span>
-                <span class="hide-menu">Approval Pembayaran</span>
-              </a>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link" href="./authentication-login.html" aria-expanded="false">
-                <span>
-                  <i class="ti ti-login"></i>
-                </span>
-                <span class="hide-menu">Login</span>
-              </a>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link" href="./authentication-register.html" aria-expanded="false">
-                <span>
-                  <i class="ti ti-user-plus"></i>
-                </span>
-                <span class="hide-menu">Register</span>
-              </a>
-            </li>
+            
 
             <li class="nav-small-cap">
               <i class="ti ti-dots nav-small-cap-icon fs-4"></i>

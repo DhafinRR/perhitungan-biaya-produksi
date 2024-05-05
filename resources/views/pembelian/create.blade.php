@@ -94,7 +94,7 @@
                       </div>
 
                       <div class="mb-3"><label for="kuantitas">Kuantitas</label>
-                        <input class="form-control form-control-solid" id="kuantitas" name="kuantitas" type="text"  value="{{old('kuantitas')}}">
+                        <input class="form-control form-control-solid" id="kuantitas_tampil" name="kuantitas" type="text"  value="{{old('kuantitas')}}">
                         </div>
         
                     
