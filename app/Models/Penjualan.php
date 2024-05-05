@@ -15,6 +15,7 @@ class Penjualan extends Model
     protected $table = 'penjualan';
     protected $fillable = ['no_transaksi','id_customer','tgl_transaksi','tgl_expired','total_harga','status'];
 
+
     // untuk melihat data barang
     public static function getBarang()
     {
@@ -141,8 +142,8 @@ class Penjualan extends Model
     }
 
     // prosedur input data penjualan 
+
     public static function inputPenjualan($id_customer,$total_harga,$id_barang,$jml_barang,$harga_barang,$total){
-        
         // instansiasi obyek
         $penjualan = new Penjualan;
         // query apakah ada di keranjang
@@ -169,6 +170,7 @@ class Penjualan extends Model
             $date = date('Y-m-d H:i:s');
             //tambahkan 3 hari untuk expired datenya dari tanggal sekarang
             $date_plus_3=Date('Y-m-d H:i:s', strtotime('+3 days')); 
+
             DB::table('penjualan')->insert([
                 'no_transaksi' => $faktur,
                 'id_customer' => $id_customer,
@@ -187,6 +189,7 @@ class Penjualan extends Model
                 'total' => $total,
                 'tgl_transaksi' => $date,
                 'tgl_expired' => $date_plus_3,
+
             ]);
 
             // update stok di tabel barang menjadi berkurang
@@ -229,9 +232,9 @@ class Penjualan extends Model
 
             // update ke tabel transaksi expirednya menjadi expired terlama dari detail penjualan
             $affected = DB::table('penjualan')
+
               ->where('no_transaksi', $no_transaksi)
               ->update(['tgl_expired' => $mak_expired]);
-
             // jika mak expired sudah melewati masa sekarang
             // maka lakukan update status pesanan menjadi 'expired'
             $date = date('Y-m-d H:i:s');
@@ -302,6 +305,7 @@ class Penjualan extends Model
                 $affected = DB::table('barang')
                 ->where('id', $id_barang)
                 ->update(['stok' => $stok_akhir]);
+
                 // akhir buat nomor faktur baru
 
                 // tambahkan ke status transaksi
@@ -328,6 +332,7 @@ class Penjualan extends Model
                             WHERE id_customer = ? AND status NOT IN ('selesai','expired','siap_bayar','konfirmasi_bayar')
                         ) AND id_barang = ?
                         ";
+
                 $barang = DB::select($sql,[$id_customer,$id_barang]);
                 $cek = 0;
                 foreach($barang as $b):
@@ -356,7 +361,9 @@ class Penjualan extends Model
                 endforeach;
 
                 // jika nilai variabel cek == 0 maka ini adalah inputan baru
+
                 if($cek==0){
+
                     // 
                     // buat nomor faktur baru dan masukkan ke tabel
                     // dapatkan nomor faktur terakhir cth format FK-0004
@@ -371,6 +378,7 @@ class Penjualan extends Model
                     $sql = "SELECT total_harga  FROM penjualan
                             WHERE no_transaksi = ? 
                            ";
+
                     $barang = DB::select($sql,[$no_transaksi]);
                     foreach($barang as $b):
                         $total_harga_lama = $b->total_harga;
@@ -527,12 +535,14 @@ class Penjualan extends Model
 
     // dapatkan jumlah barang
     public static function getJmlBarang($id_customer){
+
         $sql = "SELECT count(*) as jml FROM penjualan_detail 
                 WHERE no_transaksi IN 
                 (SELECT no_transaksi FROM penjualan 
                  WHERE id_customer = ? AND status 
                  NOT IN ('expired','hapus','siap_bayar','konfirmasi_bayar','selesai')
                 )";
+
         $barang = DB::select($sql,[$id_customer]);
         foreach($barang as $b):
             $jml = $b->jml;
@@ -549,6 +559,4 @@ class Penjualan extends Model
         endforeach;
         return $jml;
     }
-
-
 }

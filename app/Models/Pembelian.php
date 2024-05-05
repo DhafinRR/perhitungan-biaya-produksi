@@ -8,33 +8,33 @@ use Illuminate\Database\Eloquent\Model;
 
 use Illuminate\Support\Facades\DB;
 
-class Pegawai extends Model
+class Pembelian extends Model
 {
     use HasFactory;
-    protected $table = 'pegawai';
-    protected $primaryKey = 'id_pegawai';
+    protected $table = 'pembelian';
+    protected $primaryKey = 'id';
     // list kolom yang bisa diisi
-    protected $fillable = ['kode_pegawai', 'nama_pegawai', 'alamat'];
+    protected $fillable = ['nomor_pembelian', 'tanggal_pembelian', 'id_bahanbaku', 'harga', 'kuantitas',];
 
     // query nilai max dari kode pegawai untuk generate otomatis kode pegawai
 
-    public function getKodePegawai()
+    public function getNomorPembelian()
     {
         // query kode pegawai
-        $sql = "SELECT IFNULL(MAX(kode_pegawai), 'PG-000') as kode_pegawai 
-                FROM pegawai";
-        $kode_pegawai = DB::select($sql);
+        $sql = "SELECT IFNULL(MAX(nomor_pembelian), 'PB-000') as nomor_pembelian 
+                FROM pembelian";
+        $nomor_pembelian = DB::select($sql);
 
         // cacah hasilnya
-        foreach ($kode_pegawai as $kp) {
-            $ip = $kp->kode_pegawai;
+        foreach ($nomor_pembelian as $np) {
+            $ip = $np->nomor_pembelian;
         }
         // Mengambil substring tiga digit akhir dari string PG-000
         $noawal = substr($ip, -3);
         $noakhir = $noawal + 1; //menambahkan 1, hasilnya adalah integer cth 1
 
         //menyambung dengan string PR-001
-        $noakhir = 'PG-' . str_pad($noakhir, 3, "0", STR_PAD_LEFT);
+        $noakhir = 'PB-' . str_pad($noakhir, 3, "0", STR_PAD_LEFT);
 
         return $noakhir;
     }

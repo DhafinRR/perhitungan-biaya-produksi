@@ -14,6 +14,7 @@ class PenjualanController extends Controller
 {
     /**
      * Display a listing of the resource.
+
      *
      * @return \Illuminate\Http\Response
      */
@@ -66,6 +67,7 @@ class PenjualanController extends Controller
             return response()->json([
                 'status'=>404,
                 'message'=>'Tidak ada data ditemukan.'
+
             ]);
         }
     }

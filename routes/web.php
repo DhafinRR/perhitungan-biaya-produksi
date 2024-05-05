@@ -75,6 +75,9 @@ Route::middleware('auth')->group(function () {
     Route::resource('/bahanpenolong', BahanpenolongController::class)->middleware(['auth']);
     Route::get('/bahanpenolong/destroy/{id}', [App\Http\Controllers\BahanpenolongController::class, 'destroy'])->middleware(['auth']);
 
+    Route::resource('/pembelian', PembelianController::class)->middleware(['auth']);
+    Route::get('/pembelian/destroy/{id}', [App\Http\Controllers\PembelianController::class, 'destroy'])->middleware(['auth']);
+
 
     Route::resource('/biayalainnya', BiayalainnyaController::class)->middleware(['auth']);
     Route::get('/biayalainnya/destroy/{id}', [App\Http\Controllers\BiayalainnyaController::class, 'destroy'])->middleware(['auth']);

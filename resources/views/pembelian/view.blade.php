@@ -21,7 +21,7 @@
           </ul>
           <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
             <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
-              <a href="https://adminmart.com/product/modernize-free-bootstrap-admin-dashboard/" target="_blank" class="btn btn-primary">Download Free</a>
+              <a href="https://adminmart.com/product/modernize-free-bootstrap-admin-dashboard/" target="_blank" class="btn btn-primary">User</a>
               <li class="nav-item dropdown">
                 <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown"
                   aria-expanded="false">
@@ -56,15 +56,15 @@
             <div class="card-body">
               <div class="row">
                 <div class="col-md-12">
-                  <h5 class="card-title fw-semibold mb-4">Pekerjaan</h5>
+                  <h5 class="card-title fw-semibold mb-4">Pembelian</h5>
                   <div class="card">
 
                         <!-- Card Header - Dropdown -->
                         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                            <h6 class="m-0 font-weight-bold text-primary">Master Data Pekerjaan</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Master Data Pembelian</h6>
                             
                             <!-- Tombol Tambah Data -->
-                            <a href="{{ url('/pekerjaan/create') }}" class="btn btn-primary btn-icon-split btn-sm">
+                            <a href="{{ url('/pembelian/create') }}" class="btn btn-primary btn-icon-split btn-sm">
                                 <span class="icon text-white-50">
                                     <i class="ti ti-plus"></i>
                                 </span>
@@ -80,35 +80,41 @@
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead class="thead-dark">
                                         <tr>
-                                            <th>Kode</th>
-                                            <th>Jenis</th>
-                                            <th>Tarif Per Jam</th>
+                                            <th>Nomor Pembelian</th>
+                                            <th>Tanggal Pembelian</th>
+                                            <th>Nama Bahan Baku</th>
+                                            <th>Harga</th>
+                                            <th>Kuantitas</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tfoot class="thead-dark">
                                         <tr>
-                                            <th>Kode</th>
-                                            <th>Jenis</th>
-                                            <th>Tarif Per Jam</th>
-                                            <th>Aksi</th>
+                                          <th>Nomor Pembelian</th>
+                                          <th>Tanggal Pembelian</th>
+                                          <th>Nama Bahan Baku</th>
+                                          <th>Harga</th>
+                                          <th>Kuantitas</th>
+                                          <th>Aksi</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                    @foreach ($pekerjaan as $p)
+                                    @foreach ($pembelian as $p)
                                         <tr>
-                                            <td>{{ $p->kode_pekerjaan }}</td>
-                                            <td>{{ $p->jenis_pekerjaan }}</td>
-                                            <td>{{ $p->tarif_per_jam }}</td>
+                                            <td>{{ $p->nomor_pembelian }}</td>
+                                            <td>{{ $p->tanggal_pembelian }}</td>
+                                            <td>{{ $p->nama_bahanbaku }}</td>
+                                            <td>{{ $p->harga }}</td>
+                                            <td>{{ $p->kuantitas }}</td>
                                             <td>
-                                                    <a href="{{ route('pekerjaan.edit', $p->id) }}" class="btn btn-success btn-icon-split btn-sm">
+                                                    <a href="{{ route('pembelian.edit', $p->id) }}" class="btn btn-success btn-icon-split btn-sm">
                                                         <span class="icon text-white-50">
                                                             <i class="ti ti-check"></i>
                                                         </span>
                                                         <span class="text">Ubah</span>
                                                     </a>
 
-                                                    <a href="#" onclick="deleteConfirm(this); return false;" data-id="{{ $p->id_pekerjaan }}" class="btn btn-danger btn-icon-split btn-sm">
+                                                    <a href="#" onclick="deleteConfirm(this); return false;" data-id="{{ $p->id }}" class="btn btn-danger btn-icon-split btn-sm">
                                                         <span class="icon text-white-50">
                                                             <i class="ti ti-minus"></i>
                                                         </span>
@@ -139,7 +145,7 @@
                 id = e.getAttribute('data-id');
 
                 // const str = 'Hello' + id + 'World';
-                var url3 = "{{url('/pekerjaan/destroy/')}}";
+                var url3 = "{{url('pembelian/destroy/')}}";
                 var url4 = url3.concat("/",id);
                 // console.log(url4);
 

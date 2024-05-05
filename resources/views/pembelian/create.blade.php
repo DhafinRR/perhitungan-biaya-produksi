@@ -22,7 +22,7 @@
           </ul>
           <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
             <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
-              <a href="https://adminmart.com/product/modernize-free-bootstrap-admin-dashboard/" target="_blank" class="btn btn-primary">Download Free</a>
+              <a href="https://adminmart.com/product/modernize-free-bootstrap-admin-dashboard/" target="_blank" class="btn btn-primary">User</a>
               <li class="nav-item dropdown">
                 <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown"
                   aria-expanded="false">
@@ -54,7 +54,7 @@
       <div class="container-fluid">
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title fw-semibold mb-4">Data Bahan Baku</h5>
+            <h5 class="card-title fw-semibold mb-4">Data Pembelian</h5>
 
                 <!-- Display Error jika ada error -->
                 @if ($errors->any())
@@ -69,45 +69,42 @@
                 <!-- Akhir Display Error -->
 
                 <!-- Awal Dari Input Form -->
-                <form action="{{ route('bahanbaku.update', $bahanbaku->id_bahanbaku) }}" method="post">
+                <form action="{{ route('pembelian.store') }}" method="post">
                     @csrf
-                    @method('PUT')
                     <fieldset disabled>
-                        <div class="mb-3"><label for="id_bahanbaku_tampil">ID Bahan Baku</label>
-                        <input class="form-control form-control-solid" id="id_bahanbaku_tampil" name="id_bahanbaku_tampil" type="text" placeholder="Contoh: PR-001" value="{{$bahanbaku->id_bahanbaku}}" readonly></div>
+                        <div class="mb-3"><label for="nomor_pembelianlabel">Nomor Pembelian</label>
+                        <input class="form-control form-control-solid" id="nomor_pembelian_tampil" name="nomor_pembelian_tampil" type="text" placeholder="Contoh: PB-001" value="{{$nomor_pembelian}}" readonly></div>
                     </fieldset>
-                    <input type="hidden" id="id_bahanbaku" name="id_bahanbaku" value="{{$bahanbaku->id_bahanbaku}}">
-                    <fieldset disabled>
-                        <div class="mb-3"><label for="kode_bahanbaku_tampil">Kode Bahan Baku</label>
-                        <input class="form-control form-control-solid" id="kode_bahanbaku_tampil" name="kode_bahanbaku_tampil" type="text" placeholder="Contoh: PR-001" value="{{$bahanbaku->kode_bahanbaku}}" readonly></div>
-                    </fieldset>
-                    <input type="hidden" id="kode_bahanbaku" name="kode_bahanbaku" value="{{$bahanbaku->kode_bahanbaku}}">
+                    <input type="hidden" id="nomor_pembelian" name="nomor_pembelian" value="{{$nomor_pembelian}}">
 
-                    <div class="mb-3"><label for="nama_bahanbaku">Nama Bahan Baku</label>
-                    <input class="form-control form-control-solid" id="nama_bahanbaku" name="nama_bahanbaku" type="text" placeholder="Contoh: Kayu" value="{{$bahanbaku->nama_bahanbaku}}">
+                    <div class="mb-3"><label for="tanggal_pembelian">Tanggal Pembelian</label>
+                    <input class="form-control form-control-solid" id="tanggal_pembelian" name="tanggal_pembelian" type="date"  value="{{old('tanggal_pembelian')}}">
                     </div>
 
-                    <div class="mb-3"><label for="satuan">Satuan</label>
-                    <input class="form-control form-control-solid" id="satuan" name="satuan" type="text" placeholder="Contoh: Kg" value="{{$bahanbaku->satuan}}">
+                    <div class="mb-3"><label for="id_bahanbaku">Id Bahan Baku</label>
+                    <select name="id_bahanbaku" id="id_bahanbaku">
+                      @foreach($bahanbaku as $b)
+                      <option value="{{$b->id_bahanbaku}}">{{$b->nama_bahanbaku}}</option>
+                      @endforeach
+                    </select>
                     </div>
 
-                    <div class="mb-3"><label for="kuantitas">Kuantitas</label>
-                    <input class="form-control form-control-solid" id="kuantitas" name="kuantitas" type="text" placeholder="Contoh: 100" value="{{$bahanbaku->kuantitas}}">
-                    </div>
-
-                    <div class="mb-3"><label for="kategori_bahan">Kuantitas</label>
-                      <select name="kategori_bahan" id="kategori_bahan">
-                        <option value="utama">Bahan Baku Utama</option>
-                        <option value="penolong">Bahan Baku Penolong</option>
-                      </select>
+                    <div class="mb-3"><label for="harga">Harga</label>
+                      <input class="form-control form-control-solid" id="harga" name="harga" type="text"  value="{{old('harga')}}">
                       </div>
+
+                      <div class="mb-3"><label for="kuantitas">Kuantitas</label>
+                        <input class="form-control form-control-solid" id="kuantitas_tampil" name="kuantitas" type="text"  value="{{old('kuantitas')}}">
+                        </div>
+        
+                    
                     <br>
                     <!-- untuk tombol simpan -->
                     
-                    <input class="col-sm-1 btn btn-success btn-sm" type="submit" value="Ubah">
+                    <input class="col-sm-1 btn btn-success btn-sm" type="submit" value="Simpan">
 
                     <!-- untuk tombol batal simpan -->
-                    <a class="col-sm-1 btn btn-dark  btn-sm" href="{{ url('/bahanbaku') }}" role="button">Batal</a>
+                    <a class="col-sm-1 btn btn-dark  btn-sm" href="{{ url('/pembelian') }}" role="button">Batal</a>
                     
                 </form>
                 <!-- Akhir Dari Input Form -->

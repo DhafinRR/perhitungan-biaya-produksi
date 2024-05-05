@@ -11,14 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('bahanbaku', function (Blueprint $table) {
-            $table->id('id_bahanbaku');
-            $table->string('kode_bahanbaku')->unique();
-            $table->string('nama_bahanbaku');
-            $table->string('satuan');
+        Schema::create('pembelian', function (Blueprint $table) {
+            $table->id();
+            $table->string('nomor_pembelian');
+            $table->date('tanggal_pembelian');
+            $table->unsignedBigInteger('id_bahanbaku');
+            $table->integer('harga');
             $table->integer('kuantitas');
-            $table->string('kategori_bahan');
             $table->timestamps();
+
+            $table->foreign('id_bahanbaku')->references('id_bahanbaku')->on('bahanbaku');
         });
     }
 
@@ -27,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('bahanbaku');
+        Schema::dropIfExists('pembelian');
     }
 };

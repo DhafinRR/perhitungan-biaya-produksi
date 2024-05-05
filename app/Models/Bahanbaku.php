@@ -16,6 +16,7 @@ class Bahanbaku extends Model
         'nama_bahanbaku',
         'satuan',
         'kuantitas',
+        'kategori_bahan'
     ];
 
     public static function getKodeBahanbaku()
