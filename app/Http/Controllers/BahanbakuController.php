@@ -33,7 +33,8 @@ class BahanbakuController extends Controller
         $validated = $request->validate([
             'nama_bahanbaku' => 'required',
             'satuan' => 'required',
-            'kuantitas' => 'required'
+            'kuantitas' => 'required',
+            'kategori_bahan' => 'required'
         ]);
 
         Bahanbaku::create($request->all());
@@ -64,7 +65,8 @@ class BahanbakuController extends Controller
         $validated = $request->validate([
             'nama_bahanbaku' => 'required',
             'satuan' => 'required',
-            'kuantitas' => 'required'
+            'kuantitas' => 'required',
+            'kategori_bahan' => 'required'
         ]);
 
         $bahanbaku->update($validated);

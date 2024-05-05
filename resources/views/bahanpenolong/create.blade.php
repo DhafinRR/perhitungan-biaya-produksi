@@ -73,20 +73,20 @@
                     @csrf
                     <fieldset disabled>
                         <div class="mb-3"><label for="kodebahanpenolonglabel">Kode Bahan Penolong</label>
-                        <input class="form-control form-control-solid" id="kode_bahanpenolong_tampil" name="kode_bahanpenolong_tampil" type="text" placeholder="Contoh: PR-001" value="{{$kode_bahanpenolong}}" readonly></div>
+                        <input class="form-control form-control-solid" id="kode_bahanpenolong_tampil" name="kode_bahanpenolong_tampil" type="text" placeholder="Contoh: BP-001" value="{{$kode_bahanpenolong}}" readonly></div>
                     </fieldset>
                     <input type="hidden" id="kode_bahanpenolong" name="kode_bahanpenolong" value="{{$kode_bahanpenolong}}">
 
                     <div class="mb-3"><label for="namabahanpenolonglabel">Nama Bahan Penolong</label>
-                    <input class="form-control form-control-solid" id="nama_bahanpenolong" name="nama_bahanpenolong" type="text" placeholder="isi nama bahan penolong" value="{{old('nama_bahanpenolong')}}">
+                    <input class="form-control form-control-solid" id="nama_bahanpenolong" name="nama_bahanpenolong" type="text" placeholder="Contoh: Paku" value="{{old('nama_bahanpenolong')}}">
                     </div>
 
                     <div class="mb-3"><label for="satuanlabel">Satuan</label>
-                      <input class="form-control form-control-solid" id="satuan" name="satuan" type="text" placeholder="isi satuan" value="{{old('satuan')}}">
+                      <input class="form-control form-control-solid" id="satuan" name="satuan" type="text" placeholder="Contoh: Kg" value="{{old('satuan')}}">
                       </div>
 
                     <div class="mb-3"><label for="kuantitaslabel">Kuantitas</label>
-                      <input class="form-control form-control-solid" id="kuantitas" name="kuantitas" type="text" placeholder="isi kuantitas" value="{{old('kuantitas')}}">
+                      <input class="form-control form-control-solid" id="kuantitas" name="kuantitas" type="text" placeholder="Contoh: 100" value="{{old('kuantitas')}}">
                       </div>
                     
                     <br>

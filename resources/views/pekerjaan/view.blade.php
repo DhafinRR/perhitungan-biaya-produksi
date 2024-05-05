@@ -101,7 +101,7 @@
                                             <td>{{ $p->jenis_pekerjaan }}</td>
                                             <td>{{ $p->tarif_per_jam }}</td>
                                             <td>
-                                                    <a href="{{ route('pekerjaan.edit', $p->id_pekerjaan) }}" class="btn btn-success btn-icon-split btn-sm">
+                                                    <a href="{{ route('pekerjaan.edit', $p->id) }}" class="btn btn-success btn-icon-split btn-sm">
                                                         <span class="icon text-white-50">
                                                             <i class="ti ti-check"></i>
                                                         </span>

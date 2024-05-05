@@ -16,11 +16,11 @@ class Pegawai extends Model
     // list kolom yang bisa diisi
     protected $fillable = ['kode_pegawai', 'nama_pegawai', 'alamat'];
 
-    // query nilai max dari kode perusahaan untuk generate otomatis kode perusahaan
+    // query nilai max dari kode pegawai untuk generate otomatis kode pegawai
 
     public function getKodePegawai()
     {
-        // query kode perusahaan
+        // query kode pegawai
         $sql = "SELECT IFNULL(MAX(kode_pegawai), 'PG-000') as kode_pegawai 
                 FROM pegawai";
         $kode_pegawai = DB::select($sql);
@@ -29,7 +29,7 @@ class Pegawai extends Model
         foreach ($kode_pegawai as $kp) {
             $ip = $kp->kode_pegawai;
         }
-        // Mengambil substring tiga digit akhir dari string PR-000
+        // Mengambil substring tiga digit akhir dari string PG-000
         $noawal = substr($ip, -3);
         $noakhir = $noawal + 1; //menambahkan 1, hasilnya adalah integer cth 1
 

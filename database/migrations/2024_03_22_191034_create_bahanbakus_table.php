@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('nama_bahanbaku');
             $table->string('satuan');
             $table->integer('kuantitas');
+            $table->string('kategori_bahan');
             $table->timestamps();
         });
     }
