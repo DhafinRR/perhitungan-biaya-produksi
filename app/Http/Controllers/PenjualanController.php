@@ -7,7 +7,7 @@ use App\Http\Requests\StorePenjualanRequest;
 use App\Http\Requests\UpdatePenjualanRequest;
 
 // untuk validator
-use Illuminate\Support\Facades\Validator; 
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth; //untuk mendapatkan auth
 
 class PenjualanController extends Controller
@@ -135,7 +135,6 @@ class PenjualanController extends Controller
                 'jumlah' => 'required',
             ]
         );
-        
         if($validator->fails()){
             // gagal
             return response()->json(
