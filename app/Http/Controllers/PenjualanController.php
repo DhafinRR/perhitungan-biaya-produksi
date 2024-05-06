@@ -29,6 +29,13 @@ class PenjualanController extends Controller
                     'jml' => Penjualan::getJmlBarang($id_customer),
                     'jml_invoice' => Penjualan::getJmlInvoice($id_customer),
                 ]
+        return view(
+            'penjualan.view',
+            [
+                'barang' => $barang,
+                'jml' => Penjualan::getJmlBarang($id_customer),
+                'jml_invoice' => Penjualan::getJmlInvoice($id_customer),
+            ]
         );
     }
 
@@ -265,7 +272,9 @@ class PenjualanController extends Controller
     }
 
     // view keranjang
-    public function checkout(){
+
+    public function checkout()
+    {
         $id_customer = Auth::id();
         Penjualan::checkout($id_customer); //proses cekout
         $barang = Penjualan::getBarang();
@@ -294,7 +303,8 @@ class PenjualanController extends Controller
     }
 
     // delete penjualan detail
-    public function destroypenjualandetail($id_penjualan_detail){
+    public function destroypenjualandetail($id_penjualan_detail)
+    {
         // kembalikan stok ke semula
         Penjualan::kembalikanstok($id_penjualan_detail);
 
