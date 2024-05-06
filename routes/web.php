@@ -97,8 +97,14 @@ Route::get('penjualan/jmlinvoice', [App\Http\Controllers\PenjualanController::cl
 Route::get('penjualan/status', [App\Http\Controllers\PenjualanController::class,'viewstatus'])->middleware(['auth']);
 Route::resource('penjualan', PenjualanController::class)->middleware(['auth']);
 
-    Route::resource('/pembayaran', PembayaranController::class)->middleware(['auth']);
-    Route::get('/pembayaran/destroy/{id}', [App\Http\Controllers\PembayaranController::class, 'destroy'])->middleware(['auth']);
+// transaksi pembayaran viewkeranjang
+Route::get('pembayaran/viewkeranjang', [App\Http\Controllers\PembayaranController::class,'viewkeranjang'])->middleware(['auth']);
+Route::get('pembayaran/viewstatus', [App\Http\Controllers\PembayaranController::class,'viewstatus'])->middleware(['auth']); 
+Route::get('pembayaran/viewapprovalstatus', [App\Http\Controllers\PembayaranController::class,'viewapprovalstatus'])->middleware(['auth']);
+Route::get('pembayaran/approve/{no_transaksi}', [App\Http\Controllers\PembayaranController::class,'approve'])->middleware(['auth']);
+Route::get('pembayaran/unapprove/{no_transaksi}', [App\Http\Controllers\PembayaranController::class,'unapprove'])->middleware(['auth']);
+Route::get('pembayaran/viewstatusPG', [App\Http\Controllers\PembayaranController::class,'viewstatusPG'])->middleware(['auth']);
+Route::resource('pembayaran', PembayaranController::class)->middleware(['auth']);
 });
 
 require __DIR__ . '/auth.php';
