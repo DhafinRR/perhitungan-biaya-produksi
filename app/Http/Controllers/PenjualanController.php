@@ -29,13 +29,6 @@ class PenjualanController extends Controller
                     'jml' => Penjualan::getJmlBarang($id_customer),
                     'jml_invoice' => Penjualan::getJmlInvoice($id_customer),
                 ]
-        return view(
-            'penjualan.view',
-            [
-                'barang' => $barang,
-                'jml' => Penjualan::getJmlBarang($id_customer),
-                'jml_invoice' => Penjualan::getJmlInvoice($id_customer),
-            ]
         );
     }
 
