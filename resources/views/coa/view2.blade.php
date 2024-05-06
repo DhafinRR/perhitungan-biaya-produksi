@@ -161,17 +161,7 @@
             @csrf
             <input type="hidden" id="idcoahidden" name="idcoahidden" value="">
             <input type="hidden" id="tipeproses" name="tipeproses" value="">
-                <div class="mb-3 row">
-                    <label for="nomerlabel" class="col-sm-4 col-form-label">Perusahaan</label>
-                        <div class="col-sm-8">
-                            <select class="form-control" aria-label="Default select example" id="id_perusahaan" name="id_perusahaan">
-                                @foreach ($perusahaan as $p)
-                                    <option value="{{$p->id}}">{{$p->nama_perusahaan}}</option>
-                                @endforeach
-                            </select>
-                            <div class="invalid-feedback errorid_perusahaan"></div>
-                        </div>    
-                </div>
+                
 
                 <div class="mb-3 row">
                     <label for="nomerlabel" class="col-sm-4 col-form-label">Kode Coa</label>

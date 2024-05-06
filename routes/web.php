@@ -12,6 +12,7 @@ use App\Http\Controllers\BahanpenolongController;
 use App\Http\Controllers\BiayalainnyaController;
 use App\Http\Controllers\PenjualanController;
 use App\Http\Controllers\PembayaranController;
+use App\Http\Controllers\PembelianController;
 
 /*
 |--------------------------------------------------------------------------
@@ -83,19 +84,25 @@ Route::middleware('auth')->group(function () {
     Route::resource('/biayalainnya', BiayalainnyaController::class)->middleware(['auth']);
     Route::get('/biayalainnya/destroy/{id}', [App\Http\Controllers\BiayalainnyaController::class, 'destroy'])->middleware(['auth']);
 
+    // grafik
+    Route::get('grafik/viewPenjualanBlnBerjalan', [App\Http\Controllers\GrafikController::class, 'viewPenjualanBlnBerjalan'])->middleware(['auth']);
+    Route::get('grafik/viewJmlPenjualan', [App\Http\Controllers\GrafikController::class, 'viewJmlPenjualan'])->middleware(['auth']);
+    Route::get('grafik/viewJmlBarangTerjual', [App\Http\Controllers\GrafikController::class, 'viewJmlBarangTerjual'])->middleware(['auth']);
+    Route::get('grafik/viewPenjualanSelectOption/{tahun}', [App\Http\Controllers\GrafikController::class, 'viewPenjualanSelectOption'])->middleware(['auth']);
+    Route::get('grafik/viewDataPenjualanSelectOption/{tahun}', [App\Http\Controllers\GrafikController::class, 'viewDataPenjualanSelectOption'])->middleware(['auth']);
 
     // untuk transaksi penjualan
-Route::get('penjualan/barang/{id}', [App\Http\Controllers\PenjualanController::class,'getDataBarang'])->middleware(['auth']);
-Route::get('penjualan/keranjang', [App\Http\Controllers\PenjualanController::class,'keranjang'])->middleware(['auth']);
-Route::get('penjualan/destroypenjualandetail/{id}', [App\Http\Controllers\PenjualanController::class,'destroypenjualandetail'])->middleware(['auth']);
-Route::get('penjualan/barang', [App\Http\Controllers\PenjualanController::class,'getDataBarangAll'])->middleware(['auth']);
-Route::get('penjualan/jmlbarang', [App\Http\Controllers\PenjualanController::class,'getJumlahBarang'])->middleware(['auth']);
-Route::get('penjualan/keranjangjson', [App\Http\Controllers\PenjualanController::class,'keranjangjson'])->middleware(['auth']);
-Route::get('penjualan/checkout', [App\Http\Controllers\PenjualanController::class,'checkout'])->middleware(['auth']);
-Route::get('penjualan/invoice', [App\Http\Controllers\PenjualanController::class,'invoice'])->middleware(['auth']);
-Route::get('penjualan/jmlinvoice', [App\Http\Controllers\PenjualanController::class,'getInvoice'])->middleware(['auth']);
-Route::get('penjualan/status', [App\Http\Controllers\PenjualanController::class,'viewstatus'])->middleware(['auth']);
-Route::resource('penjualan', PenjualanController::class)->middleware(['auth']);
+    Route::get('penjualan/barang/{id}', [App\Http\Controllers\PenjualanController::class, 'getDataBarang'])->middleware(['auth']);
+    Route::get('penjualan/keranjang', [App\Http\Controllers\PenjualanController::class, 'keranjang'])->middleware(['auth']);
+    Route::get('penjualan/destroypenjualandetail/{id}', [App\Http\Controllers\PenjualanController::class, 'destroypenjualandetail'])->middleware(['auth']);
+    Route::get('penjualan/barang', [App\Http\Controllers\PenjualanController::class, 'getDataBarangAll'])->middleware(['auth']);
+    Route::get('penjualan/jmlbarang', [App\Http\Controllers\PenjualanController::class, 'getJumlahBarang'])->middleware(['auth']);
+    Route::get('penjualan/keranjangjson', [App\Http\Controllers\PenjualanController::class, 'keranjangjson'])->middleware(['auth']);
+    Route::get('penjualan/checkout', [App\Http\Controllers\PenjualanController::class, 'checkout'])->middleware(['auth']);
+    Route::get('penjualan/invoice', [App\Http\Controllers\PenjualanController::class, 'invoice'])->middleware(['auth']);
+    Route::get('penjualan/jmlinvoice', [App\Http\Controllers\PenjualanController::class, 'getInvoice'])->middleware(['auth']);
+    Route::get('penjualan/status', [App\Http\Controllers\PenjualanController::class, 'viewstatus'])->middleware(['auth']);
+    Route::resource('penjualan', PenjualanController::class)->middleware(['auth']);
 
     Route::resource('/pembayaran', PembayaranController::class)->middleware(['auth']);
     Route::get('/pembayaran/destroy/{id}', [App\Http\Controllers\PembayaranController::class, 'destroy'])->middleware(['auth']);
