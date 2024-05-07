@@ -60,15 +60,6 @@
                 </span>
                 <span class="hide-menu">Bahan Baku</span>
               </a>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link" href="{{ url('bahanpenolong') }}" aria-expanded="false">
-                <span>
-                  <i class="ti ti-shopping-cart"></i>
-                </span>
-                <span class="hide-menu">Bahan Penolong</span>
-              </a>
-            </li>
             <li class="sidebar-item">
               <a class="sidebar-link" href="{{ url('biayalainnya') }}" aria-expanded="false">
                 <span>
