@@ -53,6 +53,8 @@
   <!-- Include ApexCharts library -->
   <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 
+  <script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key={{env('MIDTRANS_CLIENT_KEY')}}></script>
+
   <!-- Untuk Tambahan DataTables -->
   <link href="{{asset('vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">	
 

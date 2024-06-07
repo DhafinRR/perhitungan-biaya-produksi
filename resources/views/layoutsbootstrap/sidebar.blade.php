@@ -184,6 +184,23 @@
                 <span class="hide-menu">Penjualan AJAX</span>
               </a>
             </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="{{ url('pembayaran/viewstatusPG') }}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-credit-card"></i>
+                </span>
+                <span class="hide-menu">View Status PG</span>
+              </a>
+            </li>
+
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="{{ url('midtrans/bayar') }}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-credit-card"></i>
+                </span>
+                <span class="hide-menu">Pembayaran PG</span>
+              </a>
+            </li>
           
           <div class="unlimited-access hide-menu bg-light-primary position-relative mb-7 mt-5 rounded">
             <div class="d-flex">

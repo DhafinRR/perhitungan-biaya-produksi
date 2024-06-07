@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StorePembayaranRequest;
-use App\Http\Requests\UpdatePembayaranRequest;
 use App\Models\Pembayaran;
-
 // tambahan untuk data penjualan
 use App\Models\Penjualan;
+use App\Http\Requests\StorePembayaranRequest;
+use App\Http\Requests\UpdatePembayaranRequest;
 
 use Illuminate\Support\Facades\DB; // untuk query 
 use Illuminate\Support\Facades\Auth; //untuk mendapatkan auth
@@ -17,6 +16,8 @@ class PembayaranController extends Controller
 {
     /**
      * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
@@ -35,6 +36,8 @@ class PembayaranController extends Controller
 
     /**
      * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
      */
     public function create()
     {
@@ -43,6 +46,9 @@ class PembayaranController extends Controller
 
     /**
      * Store a newly created resource in storage.
+     *
+     * @param  \App\Http\Requests\StorePembayaranRequest  $request
+     * @return \Illuminate\Http\Response
      */
     public function store(StorePembayaranRequest $request)
     {
@@ -86,6 +92,52 @@ class PembayaranController extends Controller
         }
         //
     }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Pembayaran  $pembayaran
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Pembayaran $pembayaran)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Pembayaran  $pembayaran
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Pembayaran $pembayaran)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \App\Http\Requests\UpdatePembayaranRequest  $request
+     * @param  \App\Models\Pembayaran  $pembayaran
+     * @return \Illuminate\Http\Response
+     */
+    public function update(UpdatePembayaranRequest $request, Pembayaran $pembayaran)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\Pembayaran  $pembayaran
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Pembayaran $pembayaran)
+    {
+        //
+    }
+
     // view data keranjang yang akan di bayarkan
     public function viewkeranjang()
     {
@@ -99,6 +151,7 @@ class PembayaranController extends Controller
             ]
         );
     }
+
     // view status pembayaran
     public function viewstatus()
     {
@@ -112,6 +165,7 @@ class PembayaranController extends Controller
             ]
         );
     }
+
     // view status pembayaran
     public function viewstatusPG()
     {
@@ -125,6 +179,7 @@ class PembayaranController extends Controller
             ]
         );
     }
+
     // view status pembayaran
     public function viewstatusPGAll()
     {
@@ -132,6 +187,7 @@ class PembayaranController extends Controller
         $pembayaran = Pembayaran::viewstatusPGAll();
         return $pembayaran;
     }
+
     // view approval pembayaran
     public function viewapprovalstatus()
     {
@@ -145,6 +201,8 @@ class PembayaranController extends Controller
             ]
         );
     }
+
+    // proses approval pembayaran
     public function approve($no_transaksi)
     {
         // echo $no_transaksi;
@@ -202,38 +260,5 @@ class PembayaranController extends Controller
         ]);
 
         return redirect('/pembayaran/viewapprovalstatus')->with('success', 'Approve sukses');
-    }
-
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Pembayaran $pembayaran)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Pembayaran $pembayaran)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdatePembayaranRequest $request, Pembayaran $pembayaran)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Pembayaran $pembayaran)
-    {
-        //
     }
 }
