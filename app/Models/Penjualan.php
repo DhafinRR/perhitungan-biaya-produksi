@@ -236,7 +236,6 @@ class Penjualan extends Model
             $affected = DB::table('penjualan')
                 ->where('no_transaksi', $no_transaksi)
                 ->update(['tgl_expired' => $mak_expired]);
-
             // jika mak expired sudah melewati masa sekarang
             // maka lakukan update status pesanan menjadi 'expired'
             $date = date('Y-m-d H:i:s');
