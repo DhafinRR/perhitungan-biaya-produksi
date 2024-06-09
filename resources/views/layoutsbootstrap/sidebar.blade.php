@@ -33,6 +33,10 @@
                 <span class="hide-menu">Dashboard</span>
               </a>
             </li>
+
+            <!-- Tambahan pengecekan session kelompok apakah admin atau bukan -->
+          @if(Session::get('kelompok')=='admin')
+
             <li class="nav-small-cap">
               <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
               <span class="hide-menu">Masterdata</span>
@@ -85,6 +89,10 @@
                 <span class="hide-menu">Coa</span>
               </a>
             </li>
+
+            @endif
+            <!-- Akhir pengecekan admin kelompok -->
+
             <li class="nav-small-cap">
               <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
               <span class="hide-menu">Transaksi</span>
@@ -129,6 +137,10 @@
                 <span class="hide-menu">Approval Pembayaran</span>
               </a>
             </li>
+
+            <!-- Awal pengecekan menu admin -->
+            @if(Session::get('kelompok')=='admin')
+
             <li class="sidebar-item">
               <a class="sidebar-link" href="./authentication-login.html" aria-expanded="false">
                 <span>
@@ -246,6 +258,9 @@
                 <span class="hide-menu">Sample Page</span>
               </a>
             </li>
+
+            @endif
+            <!-- Akhir pengecekan session kelompok admin -->
 
           </ul>
           
