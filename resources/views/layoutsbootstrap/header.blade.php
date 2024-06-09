@@ -50,6 +50,9 @@
     }
   </style>
 
+  <!-- Include ApexCharts library -->
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
   <!-- Untuk Tambahan DataTables -->
   <link href="{{asset('vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">	
 

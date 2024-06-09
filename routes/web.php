@@ -11,7 +11,10 @@ use App\Models\Pegawai;
 use App\Http\Controllers\BahanpenolongController;
 use App\Http\Controllers\BiayalainnyaController;
 use App\Http\Controllers\PenjualanController;
-
+use App\Http\Controllers\PembelianController;
+use App\Http\Controllers\PembayaranController;
+use App\Http\Controllers\GrafikController;
+use App\Http\Controllers\InfoumkmController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -94,6 +97,33 @@ Route::get('penjualan/invoice', [App\Http\Controllers\PenjualanController::class
 Route::get('penjualan/jmlinvoice', [App\Http\Controllers\PenjualanController::class,'getInvoice'])->middleware(['auth']);
 Route::get('penjualan/status', [App\Http\Controllers\PenjualanController::class,'viewstatus'])->middleware(['auth']);
 Route::resource('penjualan', PenjualanController::class)->middleware(['auth']);
+
+// laporan
+Route::get('jurnal/umum', [App\Http\Controllers\JurnalController::class,'jurnalumum'])->middleware(['auth']);
+Route::get('jurnal/viewdatajurnalumum/{periode}', [App\Http\Controllers\JurnalController::class,'viewdatajurnalumum'])->middleware(['auth']);
+Route::get('jurnal/bukubesar', [App\Http\Controllers\JurnalController::class,'bukubesar'])->middleware(['auth']);
+Route::get('jurnal/viewdatabukubesar/{periode}/{akun}', [App\Http\Controllers\JurnalController::class,'viewdatabukubesar'])->middleware(['auth']);
+
+// transaksi pembayaran viewkeranjang
+Route::get('pembayaran/viewkeranjang', [App\Http\Controllers\PembayaranController::class,'viewkeranjang'])->middleware(['auth']);
+Route::get('pembayaran/viewstatus', [App\Http\Controllers\PembayaranController::class,'viewstatus'])->middleware(['auth']); 
+Route::get('pembayaran/viewapprovalstatus', [App\Http\Controllers\PembayaranController::class,'viewapprovalstatus'])->middleware(['auth']);
+Route::get('pembayaran/approve/{no_transaksi}', [App\Http\Controllers\PembayaranController::class,'approve'])->middleware(['auth']);
+Route::get('pembayaran/unapprove/{no_transaksi}', [App\Http\Controllers\PembayaranController::class,'unapprove'])->middleware(['auth']);
+Route::get('pembayaran/viewstatusPG', [App\Http\Controllers\PembayaranController::class,'viewstatusPG'])->middleware(['auth']);
+Route::resource('pembayaran', PembayaranController::class)->middleware(['auth']);
+
+// grafik
+Route::get('grafik/viewPenjualanBlnBerjalan', [App\Http\Controllers\GrafikController::class,'viewPenjualanBlnBerjalan'])->middleware(['auth']);
+Route::get('grafik/viewJmlPenjualan', [App\Http\Controllers\GrafikController::class,'viewJmlPenjualan'])->middleware(['auth']);
+Route::get('grafik/viewJmlBarangTerjual', [App\Http\Controllers\GrafikController::class,'viewJmlBarangTerjual'])->middleware(['auth']);
+Route::get('grafik/viewPenjualanSelectOption/{tahun}', [App\Http\Controllers\GrafikController::class,'viewPenjualanSelectOption'])->middleware(['auth']);
+Route::get('grafik/viewDataPenjualanSelectOption/{tahun}', [App\Http\Controllers\GrafikController::class,'viewDataPenjualanSelectOption'])->middleware(['auth']);
+
+// untuk berita
+Route::get('infoumkm', [App\Http\Controllers\InfoumkmController::class,'index'])->middleware(['auth']);
+Route::get('infoumkkm/galeri', [App\Http\Controllers\InfoumkmController::class,'getNews'])->middleware(['auth']);
+Route::get('/infoumkm', [App\Http\Controllers\infoumkmController::class, 'getNews']);
 
 });
 

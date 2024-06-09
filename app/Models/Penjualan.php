@@ -232,7 +232,6 @@ class Penjualan extends Model
 
             // update ke tabel transaksi expirednya menjadi expired terlama dari detail penjualan
             $affected = DB::table('penjualan')
-
               ->where('no_transaksi', $no_transaksi)
               ->update(['tgl_expired' => $mak_expired]);
             // jika mak expired sudah melewati masa sekarang
