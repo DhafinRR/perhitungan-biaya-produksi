@@ -7,12 +7,12 @@ use Illuminate\Support\Facades\Http;
 
 use Illuminate\Http\Request;
 
-class BeritabahanbakuController extends Controller
+class BeritaController extends Controller
 {
     // untuk tes response dari API
     public function index()
     {
-        $response = Http::get('https://newsapi.org/v2/everything?q=bahan baku&from=2024-05-09&sortBy=publishedAt&apiKey=627c78ea1f2e411b9a48146eaa13edc9');
+        $response = Http::get('https://newsapi.org/v2/everything?q=raw material costs&sortBy=popularity&apiKey=3f558041f2004edd94ad9c36372addb6');
         $hasil = json_decode($response);
         // var_dump($hasil);
 
@@ -36,15 +36,22 @@ class BeritabahanbakuController extends Controller
     public function getNews()
     {
         // akses API
-        $url = 'https://newsapi.org/v2/everything?q=bahan baku&from=2024-05-09&sortBy=publishedAt&apiKey=627c78ea1f2e411b9a48146eaa13edc9';
+        $url = 'https://newsapi.org/v2/everything?q=raw material costs&sortBy=popularity&apiKey=3f558041f2004edd94ad9c36372addb6';
         $response = Http::get($url);
         $hasil = json_decode($response);
         // var_dump($hasil);
         return view(
-            'beritabahanbaku.berita',
+            'berita.berita',
             [
                 'hasil' => $hasil
             ]
         );
+    }
+
+    public function getWisatawan()
+    {
+        $response = Http::get('https://data.jabarprov.go.id/api-backend/bigdata/disparbud/od_15422_jumlah_wisatawan_berdasarkan_kategori');
+        $result = json_decode($response);
+        return view('wisatawan.wisatawan', ['hasil' => $result]);
     }
 }

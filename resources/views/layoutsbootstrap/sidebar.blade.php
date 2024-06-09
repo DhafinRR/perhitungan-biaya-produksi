@@ -26,11 +26,11 @@
               <span class="hide-menu">Home</span>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./index.html" aria-expanded="false">
+              <a class="sidebar-link" href="{{ url('dashboardbootstrap') }}" aria-expanded="false">
                 <span>
                   <i class="ti ti-layout-dashboard"></i>
                 </span>
-                <span class="hide-menu">Dashboard</span>
+                <span class="hide-menu">Info Material</span>
               </a>
             </li>
 
@@ -43,11 +43,11 @@
               </a>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="{{ url('berita/galeri') }}" aria-expanded="false">
+              <a class="sidebar-link" href="{{ url('beritabahanbaku/galeri') }}" aria-expanded="false">
                 <span>
                   <i class="ti ti-layout-dashboard"></i>
                 </span>
-                <span class="hide-menu">Info Material</span>
+                <span class="hide-menu">Info Bahan Baku</span>
               </a>
             </li>
 

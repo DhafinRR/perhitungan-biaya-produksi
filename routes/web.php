@@ -44,7 +44,7 @@ Route::get('/dashboardbootstrap', function () {
 // Route::get('/dashboardbootstrap', function () {
 //     return view('dashboardbootstrap');
 // })->middleware(['auth'])->name('dashboardbootstrap');
-// Route::get('/dashboardbootstrap', [App\Http\Controllers\BeritaController::class, 'getNews']);
+Route::get('/dashboardbootstrap', [App\Http\Controllers\BeritaController::class, 'getNews']);
 
 
 // route coa
@@ -161,10 +161,10 @@ Route::middleware('auth')->group(function () {
     Route::get('beritabahanbaku/galeri', [App\Http\Controllers\BeritabahanbakuController::class, 'getNews'])->middleware(['auth']);
 });
 
-// untuk berita
-// Route::get('berita', [App\Http\Controllers\BeritaController::class, 'index'])->middleware(['auth']);
-// Route::get('berita/galeri', [App\Http\Controllers\BeritaController::class, 'getNews'])->middleware(['auth']);
+//untuk berita
+Route::get('berita', [App\Http\Controllers\BeritaController::class, 'index'])->middleware(['auth']);
+Route::get('berita/galeri', [App\Http\Controllers\BeritaController::class, 'getNews'])->middleware(['auth']);
 
-// Route::get('wisatawan', [App\Http\Controllers\BeritaController::class, 'getWisatawan'])->middleware(['auth']);
+Route::get('wisatawan', [App\Http\Controllers\BeritaController::class, 'getWisatawan'])->middleware(['auth']);
 
 require __DIR__ . '/auth.php';
