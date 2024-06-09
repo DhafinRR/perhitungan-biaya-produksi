@@ -13,7 +13,7 @@ use App\Http\Controllers\BiayalainnyaController;
 use App\Http\Controllers\PenjualanController;
 use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\PembelianController;
-
+use App\Http\Controllers\Beritacontroller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,11 +36,19 @@ Route::get('/dashboardbootstrap', function () {
     return view('dashboardbootstrap');
 })->middleware(['auth'])->name('dashboardbootstrap');
 
+// dashboardbootstrap
+// Route::get('/dashboardbootstrap', function () {
+//     return view('dashboardbootstrap');
+// })->middleware(['auth'])->name('dashboardbootstrap');
+Route::get('/dashboardbootstrap', [App\Http\Controllers\BeritaController::class, 'getNews']);
+
+
 // route coa
 // Route::get('/coa', [App\Http\Controllers\CoaController::class, 'index']);
 // untuk master data coa
 // jika ingin menambahkan routes baru selain default resource di tambah di awal
 // sebelum route resource
+
 Route::get('coa/tabel', [App\Http\Controllers\CoaController::class, 'tabel'])->middleware(['auth']);
 Route::get('coa/fetchcoa', [App\Http\Controllers\CoaController::class, 'fetchcoa'])->middleware(['auth']);
 Route::get('coa/fetchAll', [App\Http\Controllers\CoaController::class, 'fetchAll'])->middleware(['auth']);
@@ -119,6 +127,10 @@ Route::middleware('auth')->group(function () {
     Route::get('midtrans/status2/{id}', [App\Http\Controllers\CobaMidtransController::class, 'cekstatus'])->middleware(['auth']);
     Route::get('midtrans/bayar', [App\Http\Controllers\CobaMidtransController::class, 'bayar'])->middleware(['auth']);
     Route::post('midtrans/proses_bayar', [App\Http\Controllers\CobaMidtransController::class, 'proses_bayar'])->middleware(['auth']);
+
+// untuk berita
+Route::get('berita', [App\Http\Controllers\BeritaController::class,'index',])->middleware(['auth']);
+Route::get('berita/galeri', [App\Http\Controllers\BeritaController::class,'getNews'])->middleware(['auth']);
 });
 
 require __DIR__ . '/auth.php';
