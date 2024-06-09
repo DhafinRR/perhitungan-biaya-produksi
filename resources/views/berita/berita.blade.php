@@ -56,7 +56,7 @@
             <div class="card-body">
               <div class="row">
                 <div class="col-md-12">
-                  <h5 class="card-title fw-semibold mb-4">Berita Indonesia Terbaru</h5>
+                  <h5 class="card-title fw-semibold mb-4">Berita Material Terbaru</h5>
 
                   <!-- Awal Card Body Galeri Berita -->
                   <div class="album py-5 bg-light">
