@@ -49,60 +49,59 @@ Route::get('coa/destroy/{id}', [App\Http\Controllers\CoaController::class, 'dest
 Route::resource('coa', CoaController::class)->middleware(['auth']);
 
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    // contoh form
-    Route::get('contohform/fetchAll', [App\Http\Controllers\ContohformController::class, 'fetchAll'])->middleware(['auth']);
-    Route::get('contohform/fetchcontohform', [App\Http\Controllers\ContohformController::class, 'fetchcontohform'])->middleware(['auth']);
-    Route::get('contohform/edit/{id}', [App\Http\Controllers\ContohformController::class, 'edit'])->middleware(['auth']);
-    Route::get('contohform/destroy/{id}', [App\Http\Controllers\ContohformController::class, 'destroy'])->middleware(['auth']);
-    Route::resource('contohform', App\Http\Controllers\ContohformController::class)->middleware(['auth']);
-    // route ke master data perusahaan
-    Route::resource('/perusahaan', PerusahaanController::class)->middleware(['auth']);
-    Route::get('/perusahaan/destroy/{id}', [App\Http\Controllers\PerusahaanController::class, 'destroy'])->middleware(['auth']);
+// contoh form
+Route::get('contohform/fetchAll', [App\Http\Controllers\ContohformController::class, 'fetchAll'])->middleware(['auth']);
+Route::get('contohform/fetchcontohform', [App\Http\Controllers\ContohformController::class, 'fetchcontohform'])->middleware(['auth']);
+Route::get('contohform/edit/{id}', [App\Http\Controllers\ContohformController::class, 'edit'])->middleware(['auth']);
+Route::get('contohform/destroy/{id}', [App\Http\Controllers\ContohformController::class, 'destroy'])->middleware(['auth']);
+Route::resource('contohform', App\Http\Controllers\ContohformController::class)->middleware(['auth']);
+    
+// route ke master data perusahaan
+Route::resource('/perusahaan', PerusahaanController::class)->middleware(['auth']);
+Route::get('/perusahaan/destroy/{id}', [App\Http\Controllers\PerusahaanController::class, 'destroy'])->middleware(['auth']);
 
-    Route::resource('/pegawai', PegawaiController::class)->middleware(['auth']);
-    Route::get('/pegawai/destroy/{id}', [App\Http\Controllers\PegawaiController::class, 'destroy'])->middleware(['auth']);
+Route::resource('/pegawai', PegawaiController::class)->middleware(['auth']);
+Route::get('/pegawai/destroy/{id}', [App\Http\Controllers\PegawaiController::class, 'destroy'])->middleware(['auth']);
 
-    Route::resource('/pekerjaan', PekerjaanController::class)->middleware(['auth']);
-    Route::get('/pekerjaan/destroy/{id}', [App\Http\Controllers\PekerjaanController::class, 'destroy'])->middleware(['auth']);
+Route::resource('/pekerjaan', PekerjaanController::class)->middleware(['auth']);
+Route::get('/pekerjaan/destroy/{id}', [App\Http\Controllers\PekerjaanController::class, 'destroy'])->middleware(['auth']);
 
-    Route::resource('/bahanbaku', BahanbakuController::class)->middleware(['auth']);
-    Route::get('/bahanbaku/destroy/{id}', [App\Http\Controllers\BahanbakuController::class, 'destroy'])->middleware(['auth']);
+Route::resource('/bahanbaku', BahanbakuController::class)->middleware(['auth']);
+Route::get('/bahanbaku/destroy/{id}', [App\Http\Controllers\BahanbakuController::class, 'destroy'])->middleware(['auth']);
 
-    // route ke master data perusahaan
+// route ke master data perusahaan
+Route::resource('/bahanpenolong', BahanpenolongController::class)->middleware(['auth']);
+Route::get('/bahanpenolong/destroy/{id}', [App\Http\Controllers\BahanpenolongController::class, 'destroy'])->middleware(['auth']);
 
-    Route::resource('/bahanpenolong', BahanpenolongController::class)->middleware(['auth']);
-    Route::get('/bahanpenolong/destroy/{id}', [App\Http\Controllers\BahanpenolongController::class, 'destroy'])->middleware(['auth']);
+Route::resource('/pembelian', PembelianController::class)->middleware(['auth']);
+Route::get('/pembelian/destroy/{id}', [App\Http\Controllers\PembelianController::class, 'destroy'])->middleware(['auth']);
 
-    Route::resource('/pembelian', PembelianController::class)->middleware(['auth']);
-    Route::get('/pembelian/destroy/{id}', [App\Http\Controllers\PembelianController::class, 'destroy'])->middleware(['auth']);
+Route::resource('/biayalainnya', BiayalainnyaController::class)->middleware(['auth']);
+Route::get('/biayalainnya/destroy/{id}', [App\Http\Controllers\BiayalainnyaController::class, 'destroy'])->middleware(['auth']);
 
+// grafik
+Route::get('grafik/viewPenjualanBlnBerjalan', [App\Http\Controllers\GrafikController::class, 'viewPenjualanBlnBerjalan'])->middleware(['auth']);
+Route::get('grafik/viewJmlPenjualan', [App\Http\Controllers\GrafikController::class, 'viewJmlPenjualan'])->middleware(['auth']);
+Route::get('grafik/viewJmlBarangTerjual', [App\Http\Controllers\GrafikController::class, 'viewJmlBarangTerjual'])->middleware(['auth']);
+Route::get('grafik/viewPenjualanSelectOption/{tahun}', [App\Http\Controllers\GrafikController::class, 'viewPenjualanSelectOption'])->middleware(['auth']);
+Route::get('grafik/viewDataPenjualanSelectOption/{tahun}', [App\Http\Controllers\GrafikController::class, 'viewDataPenjualanSelectOption'])->middleware(['auth']);
 
-    Route::resource('/biayalainnya', BiayalainnyaController::class)->middleware(['auth']);
-    Route::get('/biayalainnya/destroy/{id}', [App\Http\Controllers\BiayalainnyaController::class, 'destroy'])->middleware(['auth']);
-
-    // grafik
-    Route::get('grafik/viewPenjualanBlnBerjalan', [App\Http\Controllers\GrafikController::class, 'viewPenjualanBlnBerjalan'])->middleware(['auth']);
-    Route::get('grafik/viewJmlPenjualan', [App\Http\Controllers\GrafikController::class, 'viewJmlPenjualan'])->middleware(['auth']);
-    Route::get('grafik/viewJmlBarangTerjual', [App\Http\Controllers\GrafikController::class, 'viewJmlBarangTerjual'])->middleware(['auth']);
-    Route::get('grafik/viewPenjualanSelectOption/{tahun}', [App\Http\Controllers\GrafikController::class, 'viewPenjualanSelectOption'])->middleware(['auth']);
-    Route::get('grafik/viewDataPenjualanSelectOption/{tahun}', [App\Http\Controllers\GrafikController::class, 'viewDataPenjualanSelectOption'])->middleware(['auth']);
-
-    // untuk transaksi penjualan
-    Route::get('penjualan/barang/{id}', [App\Http\Controllers\PenjualanController::class, 'getDataBarang'])->middleware(['auth']);
-    Route::get('penjualan/keranjang', [App\Http\Controllers\PenjualanController::class, 'keranjang'])->middleware(['auth']);
-    Route::get('penjualan/destroypenjualandetail/{id}', [App\Http\Controllers\PenjualanController::class, 'destroypenjualandetail'])->middleware(['auth']);
-    Route::get('penjualan/barang', [App\Http\Controllers\PenjualanController::class, 'getDataBarangAll'])->middleware(['auth']);
-    Route::get('penjualan/jmlbarang', [App\Http\Controllers\PenjualanController::class, 'getJumlahBarang'])->middleware(['auth']);
-    Route::get('penjualan/keranjangjson', [App\Http\Controllers\PenjualanController::class, 'keranjangjson'])->middleware(['auth']);
-    Route::get('penjualan/checkout', [App\Http\Controllers\PenjualanController::class, 'checkout'])->middleware(['auth']);
-    Route::get('penjualan/invoice', [App\Http\Controllers\PenjualanController::class, 'invoice'])->middleware(['auth']);
-    Route::get('penjualan/jmlinvoice', [App\Http\Controllers\PenjualanController::class, 'getInvoice'])->middleware(['auth']);
-    Route::get('penjualan/status', [App\Http\Controllers\PenjualanController::class, 'viewstatus'])->middleware(['auth']);
-    Route::resource('penjualan', PenjualanController::class)->middleware(['auth']);
+// untuk transaksi penjualan
+Route::get('penjualan/barang/{id}', [App\Http\Controllers\PenjualanController::class, 'getDataBarang'])->middleware(['auth']);
+Route::get('penjualan/keranjang', [App\Http\Controllers\PenjualanController::class, 'keranjang'])->middleware(['auth']);
+Route::get('penjualan/destroypenjualandetail/{id}', [App\Http\Controllers\PenjualanController::class, 'destroypenjualandetail'])->middleware(['auth']);
+Route::get('penjualan/barang', [App\Http\Controllers\PenjualanController::class, 'getDataBarangAll'])->middleware(['auth']);
+Route::get('penjualan/jmlbarang', [App\Http\Controllers\PenjualanController::class, 'getJumlahBarang'])->middleware(['auth']);
+Route::get('penjualan/keranjangjson', [App\Http\Controllers\PenjualanController::class, 'keranjangjson'])->middleware(['auth']);
+Route::get('penjualan/checkout', [App\Http\Controllers\PenjualanController::class, 'checkout'])->middleware(['auth']);
+Route::get('penjualan/invoice', [App\Http\Controllers\PenjualanController::class, 'invoice'])->middleware(['auth']);
+Route::get('penjualan/jmlinvoice', [App\Http\Controllers\PenjualanController::class, 'getInvoice'])->middleware(['auth']);
+Route::get('penjualan/status', [App\Http\Controllers\PenjualanController::class, 'viewstatus'])->middleware(['auth']);
+Route::resource('penjualan', PenjualanController::class)->middleware(['auth']);
 
 // transaksi pembayaran viewkeranjang
 Route::get('pembayaran/viewkeranjang', [App\Http\Controllers\PembayaranController::class,'viewkeranjang'])->middleware(['auth']);
@@ -114,4 +113,12 @@ Route::get('pembayaran/viewstatusPG', [App\Http\Controllers\PembayaranController
 Route::resource('pembayaran', PembayaranController::class)->middleware(['auth']);
 });
 
+// untuk berita
+Route::get('berita', [App\Http\Controllers\BeritaController::class,'index'])->middleware(['auth']);
+Route::get('berita/galeri', [App\Http\Controllers\BeritaController::class,'getNews'])->middleware(['auth']);
+
+Route::get('wisatawan', [App\Http\Controllers\BeritaController::class,'getWisatawan'])->middleware(['auth']);
+
 require __DIR__ . '/auth.php';
+
+
