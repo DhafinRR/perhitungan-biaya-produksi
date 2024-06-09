@@ -17,7 +17,7 @@ use App\Http\Controllers\PembelianController;
 use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\GrafikController;
 use App\Http\Controllers\InfoumkmController;
-
+use App\Http\Controllers\Beritabahanbakucontroller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,11 +40,19 @@ Route::get('/dashboardbootstrap', function () {
     return view('dashboardbootstrap');
 })->middleware(['auth'])->name('dashboardbootstrap');
 
+// dashboardbootstrap
+// Route::get('/dashboardbootstrap', function () {
+//     return view('dashboardbootstrap');
+// })->middleware(['auth'])->name('dashboardbootstrap');
+// Route::get('/dashboardbootstrap', [App\Http\Controllers\BeritaController::class, 'getNews']);
+
+
 // route coa
 // Route::get('/coa', [App\Http\Controllers\CoaController::class, 'index']);
 // untuk master data coa
 // jika ingin menambahkan routes baru selain default resource di tambah di awal
 // sebelum route resource
+
 Route::get('coa/tabel', [App\Http\Controllers\CoaController::class, 'tabel'])->middleware(['auth', 'admin']);
 Route::get('coa/fetchcoa', [App\Http\Controllers\CoaController::class, 'fetchcoa'])->middleware(['auth', 'admin']);
 Route::get('coa/fetchAll', [App\Http\Controllers\CoaController::class, 'fetchAll'])->middleware(['auth', 'admin']);
@@ -148,12 +156,15 @@ Route::middleware('auth')->group(function () {
     Route::get('infoumkm', [App\Http\Controllers\InfoumkmController::class, 'index'])->middleware(['auth']);
     Route::get('infoumkkm/galeri', [App\Http\Controllers\InfoumkmController::class, 'getNews'])->middleware(['auth']);
     Route::get('/infoumkm', [App\Http\Controllers\infoumkmController::class, 'getNews']);
+    // untuk berita
+    Route::get('beritabahanbaku', [App\Http\Controllers\BeritabahanbakuController::class, 'index',])->middleware(['auth']);
+    Route::get('beritabahanbaku/galeri', [App\Http\Controllers\BeritabahanbakuController::class, 'getNews'])->middleware(['auth']);
 });
 
 // untuk berita
-Route::get('berita', [App\Http\Controllers\BeritaController::class, 'index'])->middleware(['auth']);
-Route::get('berita/galeri', [App\Http\Controllers\BeritaController::class, 'getNews'])->middleware(['auth']);
+// Route::get('berita', [App\Http\Controllers\BeritaController::class, 'index'])->middleware(['auth']);
+// Route::get('berita/galeri', [App\Http\Controllers\BeritaController::class, 'getNews'])->middleware(['auth']);
 
-Route::get('wisatawan', [App\Http\Controllers\BeritaController::class, 'getWisatawan'])->middleware(['auth']);
+// Route::get('wisatawan', [App\Http\Controllers\BeritaController::class, 'getWisatawan'])->middleware(['auth']);
 
 require __DIR__ . '/auth.php';
