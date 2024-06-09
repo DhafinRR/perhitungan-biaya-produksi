@@ -129,6 +129,13 @@ Route::middleware('auth')->group(function () {
     Route::get('grafik/viewPenjualanSelectOption/{tahun}', [App\Http\Controllers\GrafikController::class, 'viewPenjualanSelectOption'])->middleware(['auth']);
     Route::get('grafik/viewDataPenjualanSelectOption/{tahun}', [App\Http\Controllers\GrafikController::class, 'viewDataPenjualanSelectOption'])->middleware(['auth']);
 
+    // untuk midtrans
+    Route::get('midtrans', [App\Http\Controllers\CobaMidtransController::class, 'index'])->middleware(['auth']);
+    Route::get('midtrans/status', [App\Http\Controllers\CobaMidtransController::class, 'cekstatus2'])->middleware(['auth']);
+    Route::get('midtrans/status2/{id}', [App\Http\Controllers\CobaMidtransController::class, 'cekstatus'])->middleware(['auth']);
+    Route::get('midtrans/bayar', [App\Http\Controllers\CobaMidtransController::class, 'bayar'])->middleware(['auth']);
+    Route::post('midtrans/proses_bayar', [App\Http\Controllers\CobaMidtransController::class, 'proses_bayar'])->middleware(['auth']);
+
     // untuk berita
     Route::get('infoumkm', [App\Http\Controllers\InfoumkmController::class, 'index'])->middleware(['auth']);
     Route::get('infoumkkm/galeri', [App\Http\Controllers\InfoumkmController::class, 'getNews'])->middleware(['auth']);
