@@ -42,6 +42,14 @@
                 <span class="hide-menu">Info UMKM</span>
               </a>
             </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="{{ url('berita/galeri') }}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-layout-dashboard"></i>
+                </span>
+                <span class="hide-menu">Info Material</span>
+              </a>
+            </li>
 
             <!-- Tambahan pengecekan session kelompok apakah admin atau bukan -->
           @if(Session::get('kelompok')=='admin')
