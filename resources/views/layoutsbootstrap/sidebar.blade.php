@@ -33,6 +33,7 @@
                 <span class="hide-menu">Dashboard</span>
               </a>
             </li>
+
             <li class="sidebar-item">
               <a class="sidebar-link" href="{{ url('infoumkm') }}" aria-expanded="false">
                 <span>
@@ -41,6 +42,9 @@
                 <span class="hide-menu">Info UMKM</span>
               </a>
             </li>
+
+            <!-- Tambahan pengecekan session kelompok apakah admin atau bukan -->
+          @if(Session::get('kelompok')=='admin')
             <li class="nav-small-cap">
               <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
               <span class="hide-menu">Masterdata</span>
@@ -92,6 +96,10 @@
                 <span class="hide-menu">Coa</span>
               </a>
             </li>
+
+            @endif
+            <!-- Akhir pengecekan admin kelompok -->
+
             <li class="nav-small-cap">
               <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
               <span class="hide-menu">Transaksi</span>
@@ -137,6 +145,22 @@
               </a>
             </li>
 
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="./authentication-login.html" aria-expanded="false">
+                <span>
+                  <i class="ti ti-login"></i>
+                </span>
+                <span class="hide-menu">Login</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="{{ url('penjualan') }}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-wallet"></i>
+                </span>
+                <span class="hide-menu">Penjualan</span>
+              </a>
+            </li>
             <li class="nav-small-cap">
               <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
               <span class="hide-menu">LAPORAN</span>
