@@ -2,7 +2,22 @@
 
 <body>
    Body Wrapper 
-  <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+/**
+   * The main page wrapper for the application, which includes the sidebar navigation.
+   * This component is responsible for rendering the overall layout of the page, including
+   * the sidebar, header, and main content area.
+   * 
+   * The sidebar provides navigation links for various sections of the application, such as
+   * dashboards, transactions, reports, and settings. The sidebar is divided into different
+   * sections based on the user's role (e.g. admin vs regular user).
+   * 
+   * The sidebar is implemented using the `left-sidebar` class and includes a brand logo,
+   * a close button for mobile devices, and a scrollable navigation menu.
+   * 
+   * The `page-wrapper` class is used to wrap the entire page content, and the `main-wrapper`
+   * ID is used to identify the main content area.
+   */
+    <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
     data-sidebar-position="fixed" data-header-position="fixed">
 	
 	
