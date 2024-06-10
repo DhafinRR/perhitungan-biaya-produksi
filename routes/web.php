@@ -156,7 +156,7 @@ Route::middleware('auth')->group(function () {
     Route::get('infoumkm', [App\Http\Controllers\InfoumkmController::class, 'index'])->middleware(['auth']);
     Route::get('infoumkkm/galeri', [App\Http\Controllers\InfoumkmController::class, 'getNews'])->middleware(['auth']);
     Route::get('/infoumkm', [App\Http\Controllers\infoumkmController::class, 'getNews']);
-    // untuk berita
+    // untuk beritabahanbaku
     Route::get('beritabahanbaku', [App\Http\Controllers\BeritabahanbakuController::class, 'index',])->middleware(['auth']);
     Route::get('beritabahanbaku/galeri', [App\Http\Controllers\BeritabahanbakuController::class, 'getNews'])->middleware(['auth']);
 });

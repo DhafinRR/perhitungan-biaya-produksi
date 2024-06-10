@@ -1,7 +1,7 @@
  
 
 <body>
-   Body Wrapper 
+   {{-- Body Wrapper 
 /**
    * The main page wrapper for the application, which includes the sidebar navigation.
    * This component is responsible for rendering the overall layout of the page, including
@@ -16,7 +16,7 @@
    * 
    * The `page-wrapper` class is used to wrap the entire page content, and the `main-wrapper`
    * ID is used to identify the main content area.
-   */
+   */ --}}
     <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
     data-sidebar-position="fixed" data-header-position="fixed">
 	
@@ -249,15 +249,6 @@
                 </span>
                 <span class="hide-menu">Pembayaran PG</span>
               </a>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link" href="{{ url('berita') }}" aria-expanded="false">
-                <span>
-                  <i class="ti ti-layout-dashboard"></i>
-                </span>
-                <span class="hide-menu">Info BERITA</span>
-              </a>
-            </li>
           
           <div class="unlimited-access hide-menu bg-light-primary position-relative mb-7 mt-5 rounded">
             <div class="d-flex">
